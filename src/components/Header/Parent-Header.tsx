@@ -5,7 +5,7 @@ import ResponsiveMenu from "./header-top-menu";
 
 export default function Header() {
 	return (
-		<header className="absolute left-0 right-0 mx-auto bg-white lg:bg-transparent lg:mt-3 lg:w-[1060px]">
+		<header className="absolute left-0 right-0 mx-auto bg-white xs:bg-transparent lg:mt-3 lg:w-[1060px]">
 			<nav className="flex justify-between items-center py-1 lg:p-0">
 				<HeaderLogo />
 

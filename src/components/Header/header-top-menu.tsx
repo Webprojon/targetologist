@@ -1,7 +1,9 @@
-import { AiOutlineClose } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { TfiMenu } from "react-icons/tfi";
 import { useSwipeable } from "react-swipeable";
+import { IoClose } from "react-icons/io5";
+import { FaFacebookF } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
 
 export default function ResponsiveMenu() {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -23,7 +25,7 @@ export default function ResponsiveMenu() {
 	}, [isMenuOpen]);
 
 	const handleScroll = () => {
-		if (window.scrollY > 200) {
+		if (window.scrollY > 400) {
 			setIsScrolled(true);
 		} else {
 			setIsScrolled(false);
@@ -43,8 +45,10 @@ export default function ResponsiveMenu() {
 	return (
 		<>
 			<nav
-				className={`fixed top-0 w-full h-[4rem] bg-black transition-transform duration-300 flex items-center
-				${isScrolled ? "translate-y-0" : "-translate-y-full"} md:hidden`}
+				className={`fixed top-0 w-full h-[4rem] flex items-center transition-transform duration-300 md:hidden
+				${isScrolled ? "translate-y-0" : "-translate-y-full"}
+				${isMenuOpen ? "bg-gray-200" : "bg-black"} 
+				`}
 			>
 				<div className="flex justify-between w-full px-4">
 					<img
@@ -54,7 +58,7 @@ export default function ResponsiveMenu() {
 					/>
 					<button onClick={handleMenuToggle}>
 						{isMenuOpen ? (
-							<AiOutlineClose className="size-8 text-white" />
+							<IoClose className="size-9" />
 						) : (
 							<TfiMenu className="size-8 text-white" />
 						)}
@@ -64,10 +68,45 @@ export default function ResponsiveMenu() {
 
 			<div
 				{...handlers}
-				className={`fixed top-0 left-0 w-full h-full bg-black/40 transition-transform duration-400 
-				${isMenuOpen ? "translate-y-0" : "-translate-y-full"} z-10`}
+				className={`fixed top-0 left-0 w-full h-full bg-black/60 transition-transform duration-300 
+				${isMenuOpen ? "translate-y-0 top-16" : "-translate-y-full"}`}
 			>
-				<div className="h-[45vh] transition-transform duration-500 bg-white"></div>
+				<div className="flex flex-col gap-y-[4.5rem] justify-center h-[55vh] transition-transform duration-300 bg-gray-200">
+					<ul className="flex flex-col items-center justify-center gap-y-3 text-[24px] tracking-wider text-black/90">
+						<li>
+							<a href="#portfolio">КЕЙСЫ</a>
+						</li>
+						<li>
+							<a href="#reviews">ОТЗЫВЫ</a>
+						</li>
+						<li>
+							<a href="#contact">КОНТАКТЫ</a>
+						</li>
+					</ul>
+
+					<div className="flex flex-col justify-center items-center gap-y-6">
+						<div className="flex gap-x-3">
+							<a
+								href="https://www.facebook.com/"
+								className="flex justify-center items-center w-[2rem] h-[2rem] bg-black rounded-full"
+							>
+								<FaFacebookF className="text-white size-4" />
+							</a>
+
+							<a
+								href="https://www.instagram.com/"
+								className="flex justify-center items-center w-[2rem] h-[2rem] bg-black rounded-full"
+							>
+								<AiFillInstagram className="text-white size-[1.2rem]" />
+							</a>
+						</div>
+
+						<div className="flex gap-x-4 text-xl">
+							<span>EN</span>
+							<span>RU</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</>
 	);
