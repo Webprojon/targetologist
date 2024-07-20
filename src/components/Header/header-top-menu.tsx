@@ -1,25 +1,40 @@
 import { AiOutlineClose } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { TfiMenu } from "react-icons/tfi";
+import { useSwipeable } from "react-swipeable";
 
 export default function ResponsiveMenu() {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
+	useEffect(() => {
+		// overflow-y-hidden when isMenuOpen true
+		if (isMenuOpen) {
+			document.body.classList.add("no-scroll");
+		} else {
+			document.body.classList.remove("no-scroll");
+		}
+
+		// when scroll is active
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, [isMenuOpen]);
+
 	const handleScroll = () => {
-		if (window.scrollY > 300) {
+		if (window.scrollY > 200) {
 			setIsScrolled(true);
 		} else {
 			setIsScrolled(false);
 		}
 	};
 
-	useEffect(() => {
-		window.addEventListener("scroll", handleScroll);
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
+	const handlers = useSwipeable({
+		onSwipedUp: () => setIsMenuOpen(false),
+		onSwipedDown: () => setIsMenuOpen(true),
+		trackMouse: true,
+	});
 
 	const handleMenuToggle = () => {
 		setIsMenuOpen(!isMenuOpen);
@@ -28,10 +43,10 @@ export default function ResponsiveMenu() {
 	return (
 		<>
 			<nav
-				className={`fixed top-0 w-full h-16 bg-black transition-transform duration-300 flex items-center
-				${isScrolled || isMenuOpen ? "translate-y-0" : "-translate-y-full"}`}
+				className={`fixed top-0 w-full h-[4rem] bg-black transition-transform duration-300 flex items-center
+				${isScrolled ? "translate-y-0" : "-translate-y-full"} md:hidden`}
 			>
-				<div className="flex justify-between w-full h-12 px-4">
+				<div className="flex justify-between w-full px-4">
 					<img
 						alt="logo"
 						className="w-[55px] h-[43px]"
@@ -48,7 +63,7 @@ export default function ResponsiveMenu() {
 			</nav>
 
 			<div
-				onClick={handleMenuToggle}
+				{...handlers}
 				className={`fixed top-0 left-0 w-full h-full bg-black/40 transition-transform duration-400 
 				${isMenuOpen ? "translate-y-0" : "-translate-y-full"} z-10`}
 			>

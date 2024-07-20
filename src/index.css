@@ -5,3 +5,11 @@
 html {
 	scroll-behavior: smooth;
 }
+
+html::-webkit-scrollbar {
+	display: none;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
