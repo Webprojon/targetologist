@@ -1,9 +1,6 @@
 import { AiOutlineClose } from "react-icons/ai";
 import { useEffect, useState } from "react";
-import HeaderLogo from "./header-logo";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { TfiMenu } from "react-icons/tfi";
-import { MdOutlineMenu } from "react-icons/md";
 
 export default function ResponsiveMenu() {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
