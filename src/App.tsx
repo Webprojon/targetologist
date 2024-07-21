@@ -1,6 +1,6 @@
 import Header from "./components/Header/Parent-Header";
 import Contact from "./pages/Contact";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Portfolio from "./pages/Portfolio";
 import Reviews from "./pages/Reviews";
 

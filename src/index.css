@@ -29,7 +29,7 @@ html::-webkit-scrollbar {
 
 .border-ping {
 	position: absolute;
-	border-color: rgb(9, 75, 188);
+	border-color: rgb(12, 72, 176);
 	height: 100%;
 	width: 100%;
 	animation: border-ping 2s infinite;
@@ -38,4 +38,11 @@ html::-webkit-scrollbar {
 
 .relative-container {
 	position: relative;
+}
+
+.bg-image {
+	background-image: url("https://miro.medium.com/v2/resize:fit:1400/1*7F50Qc-ysFgy6tCjUyruTA.jpeg");
+	background-position: center;
+	background-repeat: repeat;
+	background-size: cover;
 }
