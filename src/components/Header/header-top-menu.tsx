@@ -45,7 +45,7 @@ export default function ResponsiveMenu() {
 	return (
 		<>
 			<nav
-				className={`fixed top-0 w-full h-[4rem] flex items-center transition-transform duration-300 md:hidden
+				className={`fixed top-0 w-full h-[4rem] flex items-center transition-transform duration-300 md:hidden z-50
 				${isScrolled ? "translate-y-0" : "-translate-y-full"}
 				${isMenuOpen ? "bg-gray-200" : "bg-black"} 
 				`}
@@ -71,8 +71,11 @@ export default function ResponsiveMenu() {
 				className={`fixed top-0 left-0 w-full h-full bg-black/60 transition-transform duration-300 
 				${isMenuOpen ? "translate-y-0 top-16" : "-translate-y-full"}`}
 			>
-				<div className="flex flex-col gap-y-[4.5rem] justify-center h-[55vh] transition-transform duration-300 bg-gray-200">
-					<ul className="flex flex-col items-center justify-center gap-y-3 text-[24px] tracking-wider text-black/90">
+				<div className="flex flex-col gap-y-[4.3rem] justify-center h-[52vh] transition-transform duration-300 bg-gray-200">
+					<ul
+						onClick={handleMenuToggle}
+						className="flex flex-col items-center justify-center gap-y-4 text-[24px] tracking-wider text-black/90"
+					>
 						<li>
 							<a href="#portfolio">КЕЙСЫ</a>
 						</li>

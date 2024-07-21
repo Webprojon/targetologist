@@ -13,3 +13,29 @@ html::-webkit-scrollbar {
 .no-scroll {
 	overflow: hidden;
 }
+
+@keyframes border-ping {
+	0% {
+		transform: scale(1);
+		border-width: 3px;
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1.1);
+		border-width: 3px;
+		opacity: 0;
+	}
+}
+
+.border-ping {
+	position: absolute;
+	border-color: rgb(9, 75, 188);
+	height: 100%;
+	width: 100%;
+	animation: border-ping 2s infinite;
+	pointer-events: none;
+}
+
+.relative-container {
+	position: relative;
+}

@@ -6,7 +6,7 @@ import Reviews from "./pages/Reviews";
 
 function App() {
 	return (
-		<section className="overflow-x-hidden">
+		<section className="max-w-[1540px] mx-auto overflow-x-hidden">
 			<Header />
 			<Home />
 			<Portfolio />
