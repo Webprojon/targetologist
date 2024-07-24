@@ -5,7 +5,7 @@ export default {
 		screens: {
 			xs: "480px",
 			sm: "640px",
-			md: "850px",
+			md: "980px",
 			lg: "1024px",
 			xl: "1380px",
 		},

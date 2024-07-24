@@ -1,3 +1,4 @@
+/* General */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,6 +15,7 @@ html::-webkit-scrollbar {
 	overflow: hidden;
 }
 
+/* Keyframes */
 @keyframes border-ping {
 	0% {
 		transform: scale(1);
@@ -27,6 +29,16 @@ html::-webkit-scrollbar {
 	}
 }
 
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.1);
+	}
+}
+
+/* Home */
 .border-ping {
 	position: absolute;
 	border-color: rgb(12, 72, 176);
@@ -41,8 +53,18 @@ html::-webkit-scrollbar {
 }
 
 .bg-image {
-	background-image: url("https://miro.medium.com/v2/resize:fit:1400/1*7F50Qc-ysFgy6tCjUyruTA.jpeg");
+	background-image: url("https://vakulenko.online/images/tild3736-6662-4466-b932-623832663736__tild6639-3239-4632-b.jpeg");
 	background-position: center;
 	background-repeat: repeat;
 	background-size: cover;
 }
+
+/* Portfolio */
+/*background-image: linear-gradient(
+			to left,
+			rgba(0, 0, 0, 1) 40%,
+			rgba(0, 0, 0, 0) 120%
+		),
+		url("https://www.mercedes-benz.pl/content/dam/hq/passengercars/cars/g-class/w465-pi/amg/modeloverview/02-2024/images/mercedes-amg-g-class-w456-model-overview-696x392-02-2024.png");
+	background-position: left;
+	background-repeat: no-repeat;*/
