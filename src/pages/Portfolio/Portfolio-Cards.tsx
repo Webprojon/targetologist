@@ -627,7 +627,7 @@ export default function PortfolioCards({ numberOfCards }: PortfolioCardsProps) {
 	}, []);
 
 	return (
-		<div className="flex flex-col gap-y-10 lg:gap-y-[8.5rem] mt-9 lg:mt-[6rem]">
+		<div className="flex flex-col gap-y-10 xs:gap-y-[8rem] sm:gap-y-[6rem] lg:gap-y-[8.5rem] mt-9 sm:mt-[6rem]">
 			{cardItems
 				.slice(0, numberOfCards)
 				.map(
@@ -640,40 +640,40 @@ export default function PortfolioCards({ numberOfCards }: PortfolioCardsProps) {
 							style={{
 								backgroundImage: `url(${width <= 980 ? bgImgRes : bgImg})`,
 							}}
-							className={`flex flex-col bg-center bg-repeat bg-cover lg:w-[1160px] lg:h-[60vh] shadow-[0_0_12px_3px_rgba(0,0,0,1)] lg:shadow-none 
+							className={`flex flex-col bg-center bg-repeat bg-cover md:w-[850px] lg:w-[1160px] lg:h-[60vh] shadow-[0_0_12px_3px_rgba(0,0,0,1)] lg:shadow-none 
 									hover:shadow-[0_0_10px_5px_rgba(0,0,0,1)]
 								 transition-shadow duration-300 ${
-										index % 2 === 0 ? "lg:self-start" : "lg:self-end"
+										index % 2 === 0 ? "md:self-start" : "md:self-end"
 									}`}
 						>
 							<div
-								className={`lg:w-[29rem] flex flex-col my-[2.2rem] ml-6 lg:mx-8 text-white ${
-									index % 2 === 0 ? "lg:self-end" : "lg:self-start"
+								className={`md:w-[26rem] lg:w-[29rem] flex flex-col xs:items-center md:items-start my-[2.2rem] ml-6 md:mx-6 lg:mx-8 text-white ${
+									index % 2 === 0 ? "md:self-end" : "md:self-start"
 								}`}
 							>
 								<div>
-									<h2 className="font-semibold text-[25px] lg:text-[28px] lg:leading-8">
+									<h2 className="font-semibold text-[25px] xs:text-center xs:text-[30px] md:text-left lg:text-[28px] lg:leading-8">
 										{title}
 									</h2>
-									<p className="pt-3 font-medium lg:text-[18px] lg:leading-6">
+									<p className="pt-3 font-medium sm:text-[18px] lg:text-[18px] lg:leading-6">
 										{description}
 									</p>
 								</div>
 
-								<div className="flex flex-col lg:flex-row gap-y-8 lg:gap-x-7 mt-12 lg:mt-16">
+								<div className="flex flex-col xs:flex-row gap-y-8 xs:gap-x-7 sm:gap-x-10 md:gap-x-6 mt-12 xs:mt-14 lg:mt-16">
 									{innerItems.map(({ firstItem, secondItem }, idx) => (
 										<div key={idx} className="flex flex-col">
-											<span className="text-[26px] lg:text-[34px] tracking-tight font-bold">
+											<span className="text-[26px] xs:text-[28px] sm:text-[36px] md:text-[28px] lg:text-[34px] tracking-tight font-bold">
 												{firstItem}
 											</span>
-											<span className="lg:text-[17px] font-medium">
+											<span className="sm:text-[18px] md:text-[15px] lg:text-[17px] font-medium">
 												{secondItem}
 											</span>
 										</div>
 									))}
 								</div>
 
-								<a href="#contact" className="mt-12 lg:mt-16">
+								<a href="#contact" className="mt-12 xs:mt-14 sm:mt-16 lg:mt-16">
 									<button className="w-[12.2rem] leading-4 font-bold border-2 text-[15px] rounded-[27px] py-3 px-6 hover:scale-105 transition-all">
 										{btnText}
 									</button>

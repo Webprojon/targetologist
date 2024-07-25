@@ -5,14 +5,15 @@ import { MdOutlinePhoneInTalk } from "react-icons/md";
 
 export default function Networks() {
 	const [isClicked, setIsClicked] = useState(false);
+
 	return (
 		<div className="relative">
 			<div
-				className={`fixed right-[1.3rem] bottom-[6rem] lg:right-[4.5rem] lg:bottom-[8rem] flex flex-col gap-y-3
-					 ${isClicked ? "block" : "hidden"}`}
+				className={`fixed right-[1.3rem] bottom-[6rem] lg:right-[4.5rem] lg:bottom-[8rem] flex flex-col gap-y-3 transition-transform duration-300 
+					 ${isClicked ? "translate-y-0" : "translate-y-16 opacity-0"}`}
 			>
 				<div className="flex justify-center items-center w-[3.1rem] h-[3.1rem] rounded-full bg-sky-900">
-					<a href="tel: +998 99 999 77 77">
+					<a href="tel:+998-93-169-34-54">
 						<FaPhoneAlt className="size-6 text-white" />
 					</a>
 				</div>
@@ -24,13 +25,16 @@ export default function Networks() {
 				</div>
 
 				<div className="flex justify-center items-center w-[3.1rem] h-[3.1rem] rounded-full bg-green-500">
-					<a href="https://web.whatsapp.com/" target="blank">
+					<a
+						href="https://www.instagram.com/latifov_izzat?igsh=MTh6d3I3M2V1cnFmYg=="
+						target="blank"
+					>
 						<FaWhatsapp className="size-7 text-white" />
 					</a>
 				</div>
 
 				<div className="flex justify-center items-center w-[3.1rem] h-[3.1rem] rounded-full bg-blue-500">
-					<a href="https://web.telegram.org/" target="blank">
+					<a href="https://t.me/izzatbek_digital" target="blank">
 						<FaTelegramPlane className="size-6 text-white" />
 					</a>
 				</div>

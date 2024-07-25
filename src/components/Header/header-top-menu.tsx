@@ -90,14 +90,16 @@ export default function ResponsiveMenu() {
 					<div className="flex flex-col justify-center items-center gap-y-6">
 						<div className="flex gap-x-3">
 							<a
-								href="https://www.facebook.com/"
+								target="blank"
+								href="https://www.instagram.com/latifov_izzat?igsh=MTh6d3I3M2V1cnFmYg=="
 								className="flex justify-center items-center w-[2rem] h-[2rem] bg-black rounded-full"
 							>
 								<FaFacebookF className="text-white size-4" />
 							</a>
 
 							<a
-								href="https://www.instagram.com/"
+								target="blank"
+								href="https://www.instagram.com/latifov_izzat?igsh=MTh6d3I3M2V1cnFmYg=="
 								className="flex justify-center items-center w-[2rem] h-[2rem] bg-black rounded-full"
 							>
 								<AiFillInstagram className="text-white size-[1.2rem]" />
@@ -105,7 +107,7 @@ export default function ResponsiveMenu() {
 						</div>
 
 						<div className="flex gap-x-4 text-xl">
-							<span>EN</span>
+							<span>UZ</span>
 							<span>RU</span>
 						</div>
 					</div>

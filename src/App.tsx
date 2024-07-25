@@ -3,6 +3,7 @@ import Networks from "./components/Networks";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home/Home";
 import Portfolio from "./pages/Portfolio/Portfolio";
+import Profile from "./pages/Profile/Profile";
 import Reviews from "./pages/Reviews";
 
 function App() {
@@ -11,9 +12,9 @@ function App() {
 			<Header />
 			<Home />
 			<Portfolio />
+			<Profile />
 			<Reviews />
 			<Contact />
-
 			<Networks />
 		</section>
 	);
