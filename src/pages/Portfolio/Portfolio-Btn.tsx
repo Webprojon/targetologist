@@ -1,12 +1,7 @@
-interface PortfolioButtonProps {
-	numberOfCards: number;
-	setNumberOfCards: (newNumber: number) => void;
-}
+import { useGlobalContext } from "../../context/global-context";
 
-export default function PortfolioButton({
-	numberOfCards,
-	setNumberOfCards,
-}: PortfolioButtonProps) {
+export default function PortfolioButton() {
+	const { numberOfCards, setNumberOfCards } = useGlobalContext();
 	return (
 		<button
 			onClick={() => setNumberOfCards(24)}

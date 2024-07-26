@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useGlobalContext } from "../../context/global-context";
 
 const cardItems = [
 	{
@@ -607,14 +610,13 @@ const cardItems = [
 	},
 ];
 
-interface PortfolioCardsProps {
-	numberOfCards: number;
-}
-
-export default function PortfolioCards({ numberOfCards }: PortfolioCardsProps) {
+export default function PortfolioCards() {
+	const { numberOfCards } = useGlobalContext();
 	const [width, setWidth] = useState(window.innerWidth);
 
 	useEffect(() => {
+		AOS.init({});
+
 		const handleResize = () => {
 			setWidth(window.innerWidth);
 		};
@@ -636,6 +638,7 @@ export default function PortfolioCards({ numberOfCards }: PortfolioCardsProps) {
 						index,
 					) => (
 						<div
+							data-aos="fade-up"
 							key={index}
 							style={{
 								backgroundImage: `url(${width <= 980 ? bgImgRes : bgImg})`,

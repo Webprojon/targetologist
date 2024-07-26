@@ -1,11 +1,8 @@
-import { useState } from "react";
 import PortfolioCards from "./Portfolio-Cards";
 import PortfolioButton from "./Portfolio-Btn";
 import PortfolioHeading from "./Portfolio-Heading";
 
 export default function Portfolio() {
-	const [numberOfCards, setNumberOfCards] = useState<number>(10);
-
 	return (
 		<section
 			id="portfolio"
@@ -13,12 +10,9 @@ export default function Portfolio() {
 		>
 			<PortfolioHeading />
 
-			<PortfolioCards numberOfCards={numberOfCards} />
+			<PortfolioCards />
 
-			<PortfolioButton
-				numberOfCards={numberOfCards}
-				setNumberOfCards={setNumberOfCards}
-			/>
+			<PortfolioButton />
 		</section>
 	);
 }
