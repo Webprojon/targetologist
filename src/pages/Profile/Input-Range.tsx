@@ -12,12 +12,12 @@ export default function InputRange() {
 				values={rangeValues}
 				onChange={(rangeValues) => setRangeValues(rangeValues)}
 				renderTrack={({ props, children }) => {
-					const { key, ...restProps } = props;
+					const { ...restProps } = props;
 					const percentage = ((rangeValues[0] - 30) / (500 - 30)) * 100;
 					return (
 						<div
 							{...restProps}
-							key={key}
+							//key={key}
 							style={{
 								...restProps.style,
 								background: `linear-gradient(to right, #3b82f6 ${percentage}%, white ${percentage}%)`,
@@ -29,11 +29,11 @@ export default function InputRange() {
 					);
 				}}
 				renderThumb={({ props }) => {
-					const { key, ...restProps } = props;
+					const { ...restProps } = props;
 					return (
 						<div
 							{...restProps}
-							key={key}
+							//key={key}
 							style={{ ...restProps.style }}
 							className="w-5 h-5 bg-blue-600 flex justify-center items-center rounded-full"
 						>
