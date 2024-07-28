@@ -2,6 +2,8 @@ import { useState } from "react";
 import InputRange from "./Input-Range";
 import axios from "axios";
 import { useGlobalContext } from "../../context/global-context";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
 
 export default function ProfileForm() {
 	const [nameValue, setNameValue] = useState("");
@@ -60,14 +62,15 @@ export default function ProfileForm() {
 				autoComplete="off"
 				className="py-3 px-5 rounded-[25px] text-black/60 placeholder:text-black/60 font-medium outline-none"
 			/>
-			<input
+			<PhoneInput
 				type="tel"
 				required
+				international
+				defaultCountry="UZ"
 				value={phoneValue}
-				onChange={(e) => setPhoneValue(e.target.value)}
-				autoComplete="off"
+				onChange={(value) => setPhoneValue(value)}
 				placeholder="(99) 999-99-99"
-				className="py-3 px-5 rounded-[28px] text-black/60 placeholder:text-black/60 font-medium outline-none"
+				className="rounded-[28px] bg-white py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-black/60 placeholder:text-black/60"
 			/>
 			<input
 				type="text"
@@ -98,7 +101,7 @@ export default function ProfileForm() {
 				<span>500</span>
 			</div>
 
-			<button className="mb-10 lg:mt-2 text-white font-bold tracking-wider rounded-[28px] bg-blue-600 py-3 px-4 hover:bg-blue-700 transition-all">
+			<button className="mb-10 lg:mt-2 text-white font-bold tracking-wider rounded-[28px] bg-blue-500 py-3 px-4 hover:bg-blue-600 transition-all">
 				{loading ? "Oтправлять" : "УЗНАТЬ РЕЗУЛЬТАТ"}
 			</button>
 		</form>

@@ -16,7 +16,7 @@ interface GlobalProviderProps {
 export const GlobalContextProvider: React.FC<GlobalProviderProps> = ({
 	children,
 }) => {
-	const [numberOfCards, setNumberOfCards] = useState<number>(10);
+	const [numberOfCards, setNumberOfCards] = useState<number>(7);
 	const [rangeValues, setRangeValues] = useState<number[]>([120]);
 
 	return (

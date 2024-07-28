@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 export default function GlobalForm() {
 	const [nameValue, setNameValue] = useState("");
@@ -48,17 +50,31 @@ export default function GlobalForm() {
 				value={nameValue}
 				onChange={(e) => setNameValue(e.target.value)}
 				placeholder="Имя"
-				className="rounded-[28px] bg-zinc-800 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
+				className="rounded-[28px] bg-zinc-700 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
 			/>
-			<input
-				type="tel"
-				required
+
+			<PhoneInput
+				country={"uz"}
 				value={phoneValue}
-				onChange={(e) => setPhoneValue(e.target.value)}
+				onChange={(value) => setPhoneValue(value)}
 				placeholder="(99) 999-99-99"
-				className="rounded-[28px] bg-zinc-800 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
+				inputStyle={{
+					borderRadius: "28px",
+					backgroundColor: "transparent",
+					fontWeight: "bold",
+					//color: "#d1d5db",
+					border: "none",
+					outline: "none",
+					width: "100%",
+				}}
+				//containerStyle={{ width: "100%" }}
+				buttonStyle={{
+					border: "none",
+					background: "transparent",
+				}}
+				className="rounded-[28px] bg-zinc-700 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
 			/>
-			<button className="text-white font-bold tracking-wide rounded-[28px] bg-blue-600 py-[1rem] lg:py-[.9rem] px-5 hover:bg-blue-700 transition-all">
+			<button className="text-white font-bold tracking-wide rounded-[28px] bg-blue-500 py-[1rem] lg:py-[.9rem] px-5 hover:bg-blue-600 transition-all">
 				{loading ? "Oтправлять" : "ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ"}
 			</button>
 		</form>

@@ -45,7 +45,7 @@ export default function ResponsiveMenu() {
 	return (
 		<>
 			<nav
-				className={`fixed top-0 w-full h-[4rem] flex items-center transition-transform duration-300 md:hidden z-50
+				className={`fixed top-0 w-full h-[4rem] flex items-center transition-transform duration-300 md:hidden z-[1000]
 				${isScrolled ? "translate-y-0" : "-translate-y-full"}
 				${isMenuOpen ? "bg-gray-200" : "bg-black"} 
 				`}
@@ -68,7 +68,7 @@ export default function ResponsiveMenu() {
 
 			<div
 				{...handlers}
-				className={`fixed top-0 left-0 w-full h-full bg-black/60 transition-transform duration-300 
+				className={`fixed top-0 left-0 w-full h-full bg-black/60 transition-transform duration-300 z-[1000]
 				${isMenuOpen ? "translate-y-0 top-16" : "-translate-y-full"}`}
 			>
 				<div className="flex flex-col gap-y-[4.3rem] justify-center h-[52vh] transition-transform duration-300 bg-gray-200">
