@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperClass } from "swiper/types";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -20,12 +21,12 @@ import feedBackThree from "../../assets/Images/Reviews/photo_2024-07-28_09-16-48
 import feedBackFour from "../../assets/Images/Reviews/photo_2024-07-28_09-16-51.jpg";
 
 export default function Reviews() {
-	const [swiperRef, setSwiperRef] = useState(null);
+	const [swiperRef, setSwiperRef] = useState<SwiperClass | null>(null);
 	const [isBeginning, setIsBeginning] = useState(true);
 	const [isEnd, setIsEnd] = useState(false);
 	const [isPaused, setIsPaused] = useState(false);
 
-	const handleSwiperInit = (swiper) => {
+	const handleSwiperInit = (swiper: SwiperClass) => {
 		setSwiperRef(swiper);
 		setIsBeginning(swiper.isBeginning);
 		setIsEnd(swiper.isEnd);

@@ -5,6 +5,8 @@ import { useGlobalContext } from "../../context/global-context";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 
+type E164Number = string;
+
 export default function ProfileForm() {
 	const [nameValue, setNameValue] = useState("");
 	const [phoneValue, setPhoneValue] = useState("");
@@ -68,7 +70,7 @@ export default function ProfileForm() {
 				international
 				defaultCountry="UZ"
 				value={phoneValue}
-				onChange={(value) => setPhoneValue(value)}
+				onChange={(value?: E164Number) => setPhoneValue(value || "")}
 				placeholder="(99) 999-99-99"
 				className="rounded-[28px] bg-white py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-black/60 placeholder:text-black/60"
 			/>

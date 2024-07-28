@@ -53,27 +53,27 @@ export default function GlobalForm() {
 				className="rounded-[28px] bg-zinc-700 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
 			/>
 
-			<PhoneInput
-				country={"uz"}
-				value={phoneValue}
-				onChange={(value) => setPhoneValue(value)}
-				placeholder="(99) 999-99-99"
-				inputStyle={{
-					borderRadius: "28px",
-					backgroundColor: "transparent",
-					fontWeight: "bold",
-					//color: "#d1d5db",
-					border: "none",
-					outline: "none",
-					width: "100%",
-				}}
-				//containerStyle={{ width: "100%" }}
-				buttonStyle={{
-					border: "none",
-					background: "transparent",
-				}}
-				className="rounded-[28px] bg-zinc-700 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
-			/>
+			<div className="rounded-[28px] bg-zinc-700 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300">
+				<PhoneInput
+					country="uz"
+					value={phoneValue}
+					onChange={(value) => setPhoneValue(value ?? "")}
+					placeholder="(99) 999-99-99"
+					inputStyle={{
+						borderRadius: "28px",
+						backgroundColor: "transparent",
+						fontWeight: "bold",
+						border: "none",
+						outline: "none",
+						width: "100%",
+					}}
+					buttonStyle={{
+						border: "none",
+						background: "transparent",
+					}}
+				/>
+			</div>
+
 			<button className="text-white font-bold tracking-wide rounded-[28px] bg-blue-500 py-[1rem] lg:py-[.9rem] px-5 hover:bg-blue-600 transition-all">
 				{loading ? "Oтправлять" : "ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ"}
 			</button>
