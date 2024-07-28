@@ -52,93 +52,91 @@ export default function Footer() {
 				backgroundPosition: "center",
 				backgroundSize: "cover",
 			}}
-			className="hidden text-white"
+			className="text-white pb-4"
 		>
-			<div className="pb-4 lg:w-[1150px] mx-auto">
-				<div className="flex justify-around">
-					{/* Left--------------------------------------------- */}
-					<div className="mt-14 flex flex-col items-center">
-						<h2 className="font-bold text-[40px] mb-10">Мои контакты</h2>
-						<div className="flex gap-x-8">
-							<a href="https://www.whatsapp.com/" target="blank">
-								<FaWhatsapp className="size-10" />
-							</a>
-							<a href="https://t.me/izzatbek_digital" target="blank">
-								<FaTelegramPlane className="size-10" />
-							</a>
-							<a
-								href="https://www.instagram.com/latifov_izzat?igsh=MTh6d3I3M2V1cnFmYg=="
-								target="blank"
-							>
-								<FaInstagram className="size-10" />
-							</a>
-							<a href="https://www.facebook.com/" target="blank">
-								<FaFacebook className="size-10" />
-							</a>
-						</div>
-
-						<div className="flex flex-col gap-y-2 items-center text-[25px] tracking-wider mt-12">
-							<a href="mailto:example@mail.ru">latifovizzatbek@mail.ru</a>
-							<a href="tel+998-93-169-34-54">+998 93 169 34 54</a>
-						</div>
-					</div>
-
-					{/* Right--------------------------------------------- */}
-					<div className="mt-14">
-						<h2 className="font-bold text-[40px] mb-10">
-							Есть вопросы? - Пишите!
-						</h2>
-						<form
-							onSubmit={SendMessage}
-							className="flex flex-col gap-y-6 mx-auto w-[350px]"
+			<div className="flex flex-col-reverse md:flex-row md:justify-around lg:w-[1150px] mx-auto">
+				<div className="mt-8 md:mt-14 flex flex-col items-center">
+					<h2 className="font-bold text-center text-[28px] xs:text-[32px] md:text-[40px] mt-10 mb-8 sm:mb-10">
+						Мои контакты
+					</h2>
+					<div className="flex gap-x-8">
+						<a href="https://www.whatsapp.com/" target="blank">
+							<FaWhatsapp className="size-8 xs:size-10" />
+						</a>
+						<a href="https://t.me/izzatbek_digital" target="blank">
+							<FaTelegramPlane className="size-8 xs:size-10" />
+						</a>
+						<a
+							href="https://www.instagram.com/latifov_izzat?igsh=MTh6d3I3M2V1cnFmYg=="
+							target="blank"
 						>
-							<input
-								type="text"
-								required
-								autoComplete="off"
-								value={nameValue}
-								onChange={(e) => setNameValue(e.target.value)}
-								placeholder="Имя"
-								className="rounded-[28px] bg-zinc-800 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
-							/>
+							<FaInstagram className="size-8 xs:size-10" />
+						</a>
+						<a href="https://www.facebook.com/" target="blank">
+							<FaFacebook className="size-8 xs:size-10" />
+						</a>
+					</div>
 
-							<input
-								type="tel"
-								required
-								autoComplete="off"
-								value={phoneValue}
-								onChange={(e) => setPhoneValue(e.target.value)}
-								placeholder="(99) 999-99-99"
-								className="rounded-[28px] bg-zinc-800 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
-							/>
-
-							<textarea
-								rows={3}
-								required
-								autoComplete="off"
-								value={textAreaValue}
-								onChange={(e) => setTextAreaValue(e.target.value)}
-								placeholder="Вопрос"
-								className="rounded-[28px] bg-zinc-800 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
-								style={{ resize: "none" }}
-							></textarea>
-
-							<button className="text-white font-bold tracking-wide rounded-[28px] bg-blue-500 py-[1rem] lg:py-[.9rem] px-5 hover:bg-blue-600 transition-all">
-								{loading ? "Oтправлять" : "ЗАДАТЬ ВОПРОС"}
-							</button>
-						</form>
+					<div className="flex flex-col gap-y-2 items-center text-[20px] xs:text-[25px] tracking-wider mt-8 sm:mt-12">
+						<a href="mailto:example@mail.ru">latifovizzatbek@mail.ru</a>
+						<a href="tel+998-93-169-34-54">+998 93 169 34 54</a>
 					</div>
 				</div>
 
-				<div className="mx-auto mt-20 w-[400px] text-center tracking-wide">
-					<div className="flex justify-center gap-x-10 text-[20px] font-bold">
-						<span>UZ</span>
-						<span className="text-blue-500">RU</span>
-					</div>
-					<p className="font-semibold mt-5 text-[20px]">
-						@ 2015-2022. Все права защищены Политика Конфиденциальности
-					</p>
+				<div className="mt-8 md:mt-14">
+					<h2 className="font-bold text-center text-[28px] xs:text-[32px] md:text-[40px] mb-10">
+						Есть вопросы? - Пишите!
+					</h2>
+					<form
+						onSubmit={SendMessage}
+						className="flex flex-col gap-y-6 mx-auto w-[290px] xs:w-[350px]"
+					>
+						<input
+							type="text"
+							required
+							autoComplete="off"
+							value={nameValue}
+							onChange={(e) => setNameValue(e.target.value)}
+							placeholder="Имя"
+							className="rounded-[28px] bg-zinc-800 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
+						/>
+
+						<input
+							type="tel"
+							required
+							autoComplete="off"
+							value={phoneValue}
+							onChange={(e) => setPhoneValue(e.target.value)}
+							placeholder="(99) 999-99-99"
+							className="rounded-[28px] bg-zinc-800 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
+						/>
+
+						<textarea
+							rows={3}
+							required
+							autoComplete="off"
+							value={textAreaValue}
+							onChange={(e) => setTextAreaValue(e.target.value)}
+							placeholder="Вопрос"
+							className="rounded-[28px] bg-zinc-800 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
+							style={{ resize: "none" }}
+						></textarea>
+
+						<button className="text-white font-bold tracking-wide rounded-[28px] bg-blue-500 py-[1rem] lg:py-[.9rem] px-5 hover:bg-blue-600 transition-all">
+							{loading ? "Oтправлять" : "ЗАДАТЬ ВОПРОС"}
+						</button>
+					</form>
 				</div>
+			</div>
+
+			<div className="mx-auto mt-10 sm:mt-20 sm:w-[400px] text-center tracking-wide">
+				<div className="flex justify-center gap-x-10 text-[20px] font-bold">
+					<span>UZ</span>
+					<span className="text-blue-500">RU</span>
+				</div>
+				<p className="font-semibold mt-5 text-[17px] xs:text-[20px]">
+					@ 2015-2022. Все права защищены Политика Конфиденциальности
+				</p>
 			</div>
 		</section>
 	);

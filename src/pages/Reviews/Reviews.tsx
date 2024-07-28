@@ -65,14 +65,14 @@ export default function Reviews() {
 	};
 
 	return (
-		<section id="reviews" className="bg-black h-[100vh] relative">
-			<h2 className="text-white font-bold text-[45px] text-center pt-10">
+		<section id="reviews" className="bg-black relative pt-10 md:py-12">
+			<h2 className="text-white font-bold text-[26px] md:text-[45px] text-center">
 				<span className="border-b-2 border-blue-600">Отзывы</span> от клиентов
 			</h2>
 
 			<button
 				onClick={handlePause}
-				className="absolute top-[5rem] right-10 z-10 text-blue-500"
+				className="hidden md:block absolute top-[10rem] right-10 z-10 text-blue-500"
 			>
 				{isPaused ? (
 					<IoMdPlay className="size-6" />
@@ -107,63 +107,63 @@ export default function Reviews() {
 					onInit={handleSwiperInit}
 					modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
 				>
-					<SwiperSlide className="w-[15rem] h-[65vh]">
+					<SwiperSlide className="w-[16.5rem] h-[70vh]">
 						<img
 							alt="slide_image"
 							src={feedBackOne}
 							className="h-[90%] w-[24rem] object-cover"
 						/>
 					</SwiperSlide>
-					<SwiperSlide className="w-[15rem] h-[65vh]">
+					<SwiperSlide className="w-[16.5rem] h-[70vh]">
 						<img
 							alt="slide_image"
 							className="h-[90%] w-[24rem] object-cover"
 							src="https://vakulenko.online/images/tild3532-3962-4633-a632-346461333431__90094198_83769867341.jpg"
 						/>
 					</SwiperSlide>
-					<SwiperSlide className="w-[15rem] h-[65vh]">
+					<SwiperSlide className="w-[16.5rem] h-[70vh]">
 						<img
 							alt="slide_image"
 							src={feedBackTwo}
 							className="h-[90%] w-[24rem] object-cover"
 						/>
 					</SwiperSlide>
-					<SwiperSlide className="w-[15rem] h-[65vh]">
+					<SwiperSlide className="w-[16.5rem] h-[70vh]">
 						<img
 							alt="slide_image"
 							className="h-[90%] w-[24rem] object-cover"
 							src="https://vakulenko.online/images/tild3264-3037-4636-a235-346532633833__90433352_12734093218.jpg"
 						/>
 					</SwiperSlide>
-					<SwiperSlide className="w-[15rem] h-[65vh]">
+					<SwiperSlide className="w-[16.5rem] h-[70vh]">
 						<img
 							alt="slide_image"
 							className="h-[90%] w-[24rem] object-cover"
 							src={feedBackThree}
 						/>
 					</SwiperSlide>
-					<SwiperSlide className="w-[15rem] h-[65vh]">
+					<SwiperSlide className="w-[16.5rem] h-[70vh]">
 						<img
 							alt="slide_image"
 							className="h-[90%] w-[24rem] object-cover"
 							src="https://vakulenko.online/images/tild3536-6136-4261-b130-626663653463__106202438_1691748964.jpg"
 						/>
 					</SwiperSlide>
-					<SwiperSlide className="w-[15rem] h-[65vh]">
+					<SwiperSlide className="w-[16.5rem] h-[70vh]">
 						<img
 							alt="slide_image"
 							className="h-[90%] w-[24rem] object-cover"
 							src={feedBackFour}
 						/>
 					</SwiperSlide>
-					<SwiperSlide className="w-[15rem] h-[65vh]">
+					<SwiperSlide className="w-[16.5rem] h-[70vh]">
 						<img
 							alt="slide_image"
 							className="h-[90%] w-[24rem] object-cover"
 							src="https://vakulenko.online/images/tild3738-3663-4433-a366-346436373630__161713049_2063392612.jpg"
 						/>
 					</SwiperSlide>
-					<SwiperSlide className="w-[15rem] h-[65vh]">
+					<SwiperSlide className="w-[16.5rem] h-[70vh]">
 						<div
 							style={{
 								backgroundImage: `url("https://vakulenko.online/images/tild6235-6265-4265-a633-613232323063__bd20749cde034c5b44b4.jpeg")`,
@@ -190,7 +190,7 @@ export default function Reviews() {
 					<div className="swiper-pagination"></div>
 
 					<div
-						className={`custom-swiper-button-prev absolute left-4 top-1/2 transform -translate-y-1/2 w-[3.1rem] h-[3.1rem] z-[999] flex 
+						className={`custom-swiper-button-prev hidden absolute left-4 top-1/2 transform -translate-y-1/2 w-[3.1rem] h-[3.1rem] z-[999] md:flex 
 							items-center justify-center rounded-full bg-slate-800 text-blue-600 shadow-md cursor-pointer transition-opacity duration-300 ease-in-out
 							 ${isBeginning ? "opacity-0" : "opacity-100"}`}
 					>
@@ -198,7 +198,7 @@ export default function Reviews() {
 					</div>
 
 					<div
-						className={`custom-swiper-button-next absolute right-4 top-1/2 transform -translate-y-1/2 w-[3.1rem] h-[3.1rem] z-[999] flex 
+						className={`custom-swiper-button-next hidden absolute right-4 top-1/2 transform -translate-y-1/2 w-[3.1rem] h-[3.1rem] z-[999] md:flex 
 							items-center justify-center rounded-full bg-slate-800 text-blue-600 shadow-md cursor-pointer transition-opacity duration-300 ease-in-out
 							 ${isEnd ? "opacity-0" : "opacity-100"}`}
 					>
