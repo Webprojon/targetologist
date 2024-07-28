@@ -59,11 +59,11 @@ export default function Services() {
 				</div>
 
 				<div className="flex justify-center flex-col xs:flex-row mt-10 md:mt-0 gap-6 sm:gap-x-12 md:gap-x-10">
-					<div className="flex flex-col gap-y-6 sm:gap-y-12 md:gap-y-10 md:mt-10">
+					<div className="flex flex-col gap-y-10 sm:gap-y-12 md:gap-y-10 md:mt-10">
 						{servicesData.slice(0, 3).map((service, index) => (
 							<div
 								key={index}
-								className="service-shadow bg-custom-gradiant border-t-[5px] border-blue-500 rounded-[15px] mx-auto w-[230px] h-[37vh] py-6 px-5"
+								className="service-shadow bg-custom-gradiant border-t-[5px] border-blue-500 rounded-[15px] mx-auto w-[300px] xs:w-[230px] h-[37vh] py-6 px-5"
 							>
 								<img alt="icon" src={service.imgSrc} className="w-12" />
 								<h2 className="font-bold mt-3 mb-4 text-[21px]">
@@ -76,11 +76,11 @@ export default function Services() {
 						))}
 					</div>
 
-					<div className="flex flex-col gap-y-6 sm:gap-y-12 md:gap-y-10">
+					<div className="flex flex-col gap-y-10 sm:gap-y-12 md:gap-y-10">
 						{servicesData.slice(3, 6).map((service, index) => (
 							<div
 								key={index}
-								className="service-shadow bg-custom-gradiant border-t-[5px] border-blue-500 rounded-[15px] mx-auto w-[230px] h-[37vh] py-6 px-5"
+								className="service-shadow bg-custom-gradiant border-t-[5px] border-blue-500 rounded-[15px] mx-auto w-[300px] xs:w-[230px] h-[37vh] py-6 px-5"
 							>
 								<img alt="icon" src={service.imgSrc} className="w-12" />
 								<h2 className="font-bold mt-3 mb-4 text-[21px]">

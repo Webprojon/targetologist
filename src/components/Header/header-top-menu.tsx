@@ -91,7 +91,7 @@ export default function ResponsiveMenu() {
 						<div className="flex gap-x-3">
 							<a
 								target="blank"
-								href="https://www.instagram.com/latifov_izzat?igsh=MTh6d3I3M2V1cnFmYg=="
+								href="https://www.facebook.com/"
 								className="flex justify-center items-center w-[2rem] h-[2rem] bg-black rounded-full"
 							>
 								<FaFacebookF className="text-white size-4" />
@@ -106,9 +106,9 @@ export default function ResponsiveMenu() {
 							</a>
 						</div>
 
-						<div className="flex gap-x-4 text-xl">
+						<div className="font-medium flex gap-x-4 text-xl">
 							<span>UZ</span>
-							<span>RU</span>
+							<span className="text-blue-600">RU</span>
 						</div>
 					</div>
 				</div>

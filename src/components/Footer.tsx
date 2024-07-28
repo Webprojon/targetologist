@@ -89,7 +89,7 @@ export default function Footer() {
 					</h2>
 					<form
 						onSubmit={SendMessage}
-						className="flex flex-col gap-y-6 mx-auto w-[290px] xs:w-[350px]"
+						className="flex flex-col gap-y-6 mx-auto w-[330px] xs:w-[350px]"
 					>
 						<input
 							type="text"

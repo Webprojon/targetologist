@@ -65,7 +65,10 @@ export default function Reviews() {
 	};
 
 	return (
-		<section id="reviews" className="bg-black relative pt-10 md:py-12">
+		<section
+			id="reviews"
+			className="scroll-mt-14 md:scroll-mt-0 bg-black relative pt-10 md:py-12"
+		>
 			<h2 className="text-white font-bold text-[26px] md:text-[45px] text-center">
 				<span className="border-b-2 border-blue-600">Отзывы</span> от клиентов
 			</h2>

@@ -6,9 +6,9 @@ export default function Home() {
 		<main className="bg-image sm:hidden md:block lg:h-[89vh]">
 			<section className="mx-auto max-w-[390px] xs:max-w-[490px] pt-[5.5rem] py-10 lg:pt-[6.6rem] md:max-w-[930px] lg:max-w-[1150px]">
 				<div className="md:flex gap-x-14">
-					<div className="text-center cursor-pointer font-bold text-white xs:hidden">
-						<span className="border border-blue-500 py-[.4rem] px-5">UZ</span>
-						<span className="border border-blue-500 py-[.4rem] px-5 bg-blue-500">
+					<div className="mt-3 text-center cursor-pointer font-bold text-white xs:hidden">
+						<span className="border border-blue-500 py-[.5rem] px-5">UZ</span>
+						<span className="border border-blue-500 py-[.5rem] px-5 bg-blue-500">
 							RU
 						</span>
 					</div>
@@ -17,10 +17,10 @@ export default function Home() {
 						<div className="flex justify-center items-center mt-10 gap-x-4 xs:mt-0 md:hidden">
 							<img
 								alt="logo"
-								className="w-[90px] h-[80px]"
+								className="w-[110px] h-[80px]"
 								src="https://vakulenko.online/images/tild3830-6536-4238-a262-393965353063__modern-letter-n-a-v-.png"
 							/>
-							<h1 className="text-white text-[26px] font-semibold tracking-wide xs:text-[28px]">
+							<h1 className="text-white text-[28px] font-semibold tracking-wide xs:text-[28px]">
 								<span className="text-gray-200 font-medium border-b-2 border-blue-600">
 									Izzatbek Latifov <br />
 								</span>
@@ -42,7 +42,7 @@ export default function Home() {
 							Увеличу продажи с помощью рекламы в интернете и предоставлю{" "}
 							<b>первые обращения клиентов уже через 48 часов</b>
 						</p>
-						<IoChevronDownOutline className="animate-bounce size-10 mx-auto mt-8 text-blue-600 md:hidden" />
+						<IoChevronDownOutline className="animate-bounce size-12 mx-auto mt-8 text-blue-600 md:hidden" />
 					</div>
 
 					<div className="relative-container lg:w-[750px]">

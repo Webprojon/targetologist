@@ -2,8 +2,11 @@ import GlobalForm from "../../components/Form";
 
 export default function Contact() {
 	return (
-		<section id="contact" className="bg-image lg:h-[89vh]">
-			<div className="mx-auto max-w-[390px] xs:max-w-[490px] pt-[5.5rem] py-10 lg:pt-[6.6rem] md:max-w-[930px] lg:max-w-[1150px]">
+		<section
+			id="contact"
+			className="scroll-mt-20 md:scroll-mt-0 bg-image lg:h-[89vh]"
+		>
+			<div className="mx-auto max-w-[390px] xs:max-w-[490px] pt-[2rem] sm:pt-[3rem] py-10 lg:pt-[6.6rem] md:max-w-[930px] lg:max-w-[1150px]">
 				<div className="md:flex gap-x-14">
 					<div className="md:w-[1050px] text-center md:text-left lg:text-left lg:mt-6">
 						<h1 className="md:mt-10 text-white text-[30px] leading-8 md:text-[50px] lg:text-[56px] md:leading-[4.4rem] font-bold tracking-wide md:block">

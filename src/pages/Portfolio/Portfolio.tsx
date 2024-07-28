@@ -6,7 +6,7 @@ export default function Portfolio() {
 	return (
 		<section
 			id="portfolio"
-			className=" flex flex-col justify-center my-8 max-w-[320px] xs:max-w-[460px] sm:max-w-[625px] md:max-w-[925px] lg:max-w-[1495px] mx-auto"
+			className="scroll-mt-20 md:scroll-mt-0 flex flex-col justify-center my-8 max-w-[320px] xs:max-w-[460px] sm:max-w-[625px] md:max-w-[925px] lg:max-w-[1495px] mx-auto"
 		>
 			<PortfolioHeading />
 
