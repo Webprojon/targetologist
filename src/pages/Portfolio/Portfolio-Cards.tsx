@@ -322,7 +322,7 @@ export default function PortfolioCards() {
 		AOS.init({});
 
 		const handleResize = () => {
-			setWidth(window.innerWidth);
+			//setWidth(window.innerWidth);
 		};
 
 		window.addEventListener("resize", handleResize);
