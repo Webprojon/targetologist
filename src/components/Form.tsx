@@ -55,7 +55,7 @@ export default function GlobalForm() {
 				className="rounded-[28px] bg-zinc-700 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
 			/>
 
-			<div className="rounded-[28px] bg-zinc-700 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300">
+			<div className="rounded-[28px] bg-zinc-700 py-[.6rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300">
 				<PhoneInput
 					country="uz"
 					value={phoneValue}

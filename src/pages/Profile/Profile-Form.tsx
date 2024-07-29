@@ -4,6 +4,7 @@ import axios from "axios";
 import { useGlobalContext } from "../../context/global-context";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
+import { useTranslation } from "react-i18next";
 
 type E164Number = string;
 
@@ -14,6 +15,7 @@ export default function ProfileForm() {
 	const [averageBill, setAverageBill] = useState("");
 	const [loading, setLoading] = useState(false);
 	const { rangeValues, setRangeValues } = useGlobalContext();
+	const { t } = useTranslation();
 
 	const SendMessage = (event: React.FormEvent<HTMLFormElement>) => {
 		setLoading(true);
@@ -57,7 +59,7 @@ export default function ProfileForm() {
 		>
 			<input
 				type="text"
-				placeholder="Имя"
+				placeholder={t("profile-form-name-input")}
 				required
 				value={nameValue}
 				onChange={(e) => setNameValue(e.target.value)}
@@ -80,7 +82,7 @@ export default function ProfileForm() {
 				value={zoneOfAdvertise}
 				onChange={(e) => setZoneOfAdvertise(e.target.value)}
 				autoComplete="off"
-				placeholder="Регион продвижения"
+				placeholder={t("profile-form-city-input")}
 				className="py-3 px-5 rounded-[28px] text-black/60 placeholder:text-black/60 font-medium outline-none"
 			/>
 			<input
@@ -89,11 +91,11 @@ export default function ProfileForm() {
 				required
 				value={averageBill}
 				onChange={(e) => setAverageBill(e.target.value)}
-				placeholder="Средний чек"
+				placeholder={t("profile-form-average-input")}
 				className="py-3 px-5 rounded-[28px] text-black/60 placeholder:text-black/60 font-medium outline-none"
 			/>
 			<p className="font-medium tracking-wide xs:text-left sm:text-left md:text-left">
-				Сколько клиентов необходимо до цели?
+				{t("profile-form-p")}
 			</p>
 
 			<InputRange />
@@ -104,7 +106,7 @@ export default function ProfileForm() {
 			</div>
 
 			<button className="mb-10 lg:mt-2 text-white font-bold tracking-wider rounded-[28px] bg-blue-500 py-3 px-4 hover:bg-blue-600 transition-all">
-				{loading ? "Oтправлять" : "УЗНАТЬ РЕЗУЛЬТАТ"}
+				{loading ? t("profile-form-btn-send") : t("profile-form-btn")}
 			</button>
 		</form>
 	);

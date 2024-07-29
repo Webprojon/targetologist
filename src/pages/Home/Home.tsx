@@ -1,17 +1,56 @@
 import { IoChevronDownOutline } from "react-icons/io5";
 import GlobalForm from "../../components/Form";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 //import HeaderLangs from "../../components/Header/header-langs";
 
 export default function Home() {
 	const { t } = useTranslation();
+
+	const [selectedLanguage, setSelectedLanguage] = useState("");
+	const { i18n } = useTranslation();
+
+	useEffect(() => {
+		const initialLanguage =
+			typeof window !== "undefined"
+				? localStorage.getItem("i18nextLng") || "uz"
+				: "uz";
+		setSelectedLanguage(initialLanguage);
+	}, []);
+
+	const handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
+		const target = event.currentTarget as HTMLSpanElement;
+		const value = target.innerText.toLowerCase();
+		setSelectedLanguage(value);
+		i18n.changeLanguage(value);
+		localStorage.setItem("i18nextLng", value);
+	};
+
 	return (
 		<main className="bg-image sm:hidden md:block lg:h-[89vh]">
 			<section className="mx-auto max-w-[390px] xs:max-w-[490px] pt-[5.5rem] py-10 lg:pt-[6.6rem] md:max-w-[930px] lg:max-w-[1150px]">
 				<div className="md:flex gap-x-14">
-					<div className="mt-3 text-center cursor-pointer font-bold text-white xs:hidden">
+					{/*<div className="mt-3 text-center cursor-pointer font-bold text-white xs:hidden">
 						<span className="border border-blue-500 py-[.5rem] px-5">UZ</span>
 						<span className="border border-blue-500 py-[.5rem] px-5 bg-blue-500">
+							RU
+						</span>
+					</div>*/}
+
+					<div className="text-center cursor-pointer font-bold text-white sm:hidden">
+						<span
+							onClick={handleClick}
+							className={`border border-blue-600 py-[.4rem] px-3
+					 ${selectedLanguage === "uz" ? "bg-blue-600" : ""}`}
+						>
+							UZ
+						</span>
+
+						<span
+							onClick={handleClick}
+							className={`border border-blue-600 py-[.4rem] px-3
+					 ${selectedLanguage === "ru" ? "bg-blue-600" : ""}`}
+						>
 							RU
 						</span>
 					</div>

@@ -19,12 +19,14 @@ import feedBackOne from "../../assets/Images/Reviews/photo_2024-07-28_09-15-57.j
 import feedBackTwo from "../../assets/Images/Reviews/photo_2024-07-28_09-16-43.jpg";
 import feedBackThree from "../../assets/Images/Reviews/photo_2024-07-28_09-16-48.jpg";
 import feedBackFour from "../../assets/Images/Reviews/photo_2024-07-28_09-16-51.jpg";
+import { useTranslation } from "react-i18next";
 
 export default function Reviews() {
 	const [swiperRef, setSwiperRef] = useState<SwiperClass | null>(null);
 	const [isBeginning, setIsBeginning] = useState(true);
 	const [isEnd, setIsEnd] = useState(false);
 	const [isPaused, setIsPaused] = useState(false);
+	const { t } = useTranslation();
 
 	const handleSwiperInit = (swiper: SwiperClass) => {
 		setSwiperRef(swiper);
@@ -70,7 +72,10 @@ export default function Reviews() {
 			className="scroll-mt-14 md:scroll-mt-0 bg-black relative pt-10 md:py-12"
 		>
 			<h2 className="text-white font-bold text-[26px] md:text-[45px] text-center">
-				<span className="border-b-2 border-blue-600">Отзывы</span> от клиентов
+				<span className="border-b-2 border-blue-600">
+					{t("review-h2-span")}
+				</span>{" "}
+				{t("review-h2")}
 			</h2>
 
 			<button
@@ -176,16 +181,16 @@ export default function Reviews() {
 							className="flex flex-col tracking-wide text-center py-20 px-4 text-white h-[90%]"
 						>
 							<h2 className="font-bold text-[29px] leading-8">
-								Круто, не так ли?
+								{t("review-slide-h2")}
 							</h2>
 							<p className="mt-4 mb-10 text-[17px] text-gray-100">
-								Оставьте Ваш номер и станьте следующим в этом списке!
+								{t("review-slide-p")}
 							</p>
 							<a
 								href="#contact"
 								className="bg-blue-500 py-[.7rem] font-semibold tracking-wider rounded-[25px]"
 							>
-								Оставить номер
+								{t("review-slide-btn")}
 							</a>
 						</div>
 					</SwiperSlide>
