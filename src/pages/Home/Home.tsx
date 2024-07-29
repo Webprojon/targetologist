@@ -1,7 +1,10 @@
 import { IoChevronDownOutline } from "react-icons/io5";
 import GlobalForm from "../../components/Form";
+import { useTranslation } from "react-i18next";
+//import HeaderLangs from "../../components/Header/header-langs";
 
 export default function Home() {
+	const { t } = useTranslation();
 	return (
 		<main className="bg-image sm:hidden md:block lg:h-[89vh]">
 			<section className="mx-auto max-w-[390px] xs:max-w-[490px] pt-[5.5rem] py-10 lg:pt-[6.6rem] md:max-w-[930px] lg:max-w-[1150px]">
@@ -13,6 +16,8 @@ export default function Home() {
 						</span>
 					</div>
 
+					{/*<HeaderLangs />*/}
+
 					<div className="md:w-[1050px] text-center md:text-left lg:text-left lg:mt-6">
 						<div className="flex justify-center items-center mt-10 gap-x-4 xs:mt-0 md:hidden">
 							<img
@@ -22,7 +27,7 @@ export default function Home() {
 							/>
 							<h1 className="text-white text-[28px] font-semibold tracking-wide xs:text-[28px]">
 								<span className="text-gray-200 font-medium border-b-2 border-blue-600">
-									Izzatbek Latifov <br />
+									Иззатбек Латифов <br />
 								</span>
 								Таргетолог
 							</h1>
@@ -33,14 +38,13 @@ export default function Home() {
 								Таргетолог
 							</span>
 							<br />
-							Izzatbek Latifov
+							Иззатбек Латифов
 						</h1>
 						<h3 className="text-white tracking-wide font-bold text-[22px] mt-6 md:hidden">
-							Комплекс маркетинговых инструментов для Вашего бизнеса
+							{t("home-h3")}
 						</h3>
 						<p className="font-medium text-white mt-5 xs:text-lg md:text-[20px] md:leading-9 md:tracking-wide md:mt-10">
-							Увеличу продажи с помощью рекламы в интернете и предоставлю{" "}
-							<b>первые обращения клиентов уже через 48 часов</b>
+							{t("home-p")}
 						</p>
 						<IoChevronDownOutline className="animate-bounce size-12 mx-auto mt-8 text-blue-600 md:hidden" />
 					</div>
@@ -49,11 +53,10 @@ export default function Home() {
 						<div className="hidden border-ping md:block"></div>
 						<div className="flex flex-col gap-y-4 text-center md:gap-y-6 md:p-[2rem] lg:p-[3.5rem] md:bg-black/70 md:border-2 border-blue-600 w-full h-full">
 							<h2 className="text-white text-[22px] xs:text-[28px] lg:mt-0 lg:text-[25px] font-bold">
-								СТРАТЕГИЯ БЕСПЛАТНО
+								{t("home-form-h2")}
 							</h2>
-							<p className="text-white xs:text-lg">
-								<b>Напишу</b> стратегию по Таргетированной Рекламе для Вашей
-								компании <b>бесплатно</b> и презентую ее!
+							<p className="font-medium text-white xs:text-lg">
+								{t("home-form-p")}
 							</p>
 
 							<GlobalForm />

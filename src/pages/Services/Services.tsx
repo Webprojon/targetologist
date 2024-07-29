@@ -58,7 +58,7 @@ export default function Services() {
 					</p>
 				</div>
 
-				<div className="flex justify-center flex-col xs:flex-row mt-10 md:mt-0 gap-6 sm:gap-x-12 md:gap-x-10">
+				<div className="flex justify-center flex-col xs:flex-row mt-10 md:mt-0 gap-y-12 sm:gap-x-12 md:gap-x-10">
 					<div className="flex flex-col gap-y-10 sm:gap-y-12 md:gap-y-10 md:mt-10">
 						{servicesData.slice(0, 3).map((service, index) => (
 							<div

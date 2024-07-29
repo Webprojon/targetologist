@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
@@ -7,6 +8,7 @@ export default function GlobalForm() {
 	const [nameValue, setNameValue] = useState("");
 	const [phoneValue, setPhoneValue] = useState("");
 	const [loading, setLoading] = useState(false);
+	const { t } = useTranslation();
 
 	const SendMessage = (event: React.FormEvent<HTMLFormElement>) => {
 		setLoading(true);
@@ -49,7 +51,7 @@ export default function GlobalForm() {
 				required
 				value={nameValue}
 				onChange={(e) => setNameValue(e.target.value)}
-				placeholder="Имя"
+				placeholder={t("home-form-input")}
 				className="rounded-[28px] bg-zinc-700 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
 			/>
 
@@ -75,7 +77,7 @@ export default function GlobalForm() {
 			</div>
 
 			<button className="text-white font-bold tracking-wide rounded-[28px] bg-blue-500 py-[1rem] lg:py-[.9rem] px-5 hover:bg-blue-600 transition-all">
-				{loading ? "Oтправлять" : "ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ"}
+				{loading ? t("home-form-sending") : t("home-form-btn")}
 			</button>
 		</form>
 	);

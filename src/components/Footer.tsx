@@ -6,6 +6,7 @@ import {
 	FaTelegramPlane,
 	FaWhatsapp,
 } from "react-icons/fa";
+import HeaderLangs from "./Header/header-langs";
 
 export default function Footer() {
 	const [nameValue, setNameValue] = useState("");
@@ -130,10 +131,11 @@ export default function Footer() {
 			</div>
 
 			<div className="mx-auto mt-10 sm:mt-20 sm:w-[400px] text-center tracking-wide">
-				<div className="flex justify-center gap-x-10 text-[20px] font-bold">
+				<HeaderLangs />
+				{/*<div className="flex justify-center gap-x-10 text-[20px] font-bold">
 					<span>UZ</span>
 					<span className="text-blue-500">RU</span>
-				</div>
+				</div>*/}
 				<p className="font-semibold mt-5 text-[17px] xs:text-[20px]">
 					@ 2015-2022. Все права защищены Политика Конфиденциальности
 				</p>

@@ -17,307 +17,12 @@ import ozdvkm from "../../assets/Images/Portfolio/ozdvkm.jpg";
 import phoneCase from "../../assets/Images/Portfolio/phoneCase2.jpg";
 import stamatolg from "../../assets/Images/Portfolio/stamatalog.jpg";
 import uychi from "../../assets/Images/Portfolio/uychi.jpg";
-
-const cardItems = [
-	{
-		id: 1,
-		title: "IT Time Academy",
-		description: "IT dasturlash o'quv markazi",
-		bgImg: itTimeAcademy,
-		btnText: "КОНСУЛЬТАЦИЮ",
-		innerItems: [
-			{
-				firstItem: "626",
-				secondItem: "Murojatchilar Soni",
-			},
-			{
-				firstItem: "0.32$",
-				secondItem: "Murojatchilar narxi ",
-			},
-			{
-				firstItem: "500$",
-				secondItem: "Reklama Budjeti",
-			},
-		],
-	},
-
-	{
-		id: 2,
-		title: "Kosmetolog Dietolog ",
-		bgImg: casmetic,
-		btnText: "КОНСУЛЬТАЦИЮ",
-		innerItems: [
-			{
-				firstItem: "899",
-				secondItem: "Murojatchilar Soni",
-			},
-			{
-				firstItem: "0.12$",
-				secondItem: "Murojatchilar Narxi",
-			},
-			{
-				firstItem: "300$",
-				secondItem: "Reklama Budjeti",
-			},
-		],
-	},
-
-	{
-		id: 3,
-		title: "Ahad Qayum Producer Actor",
-		bgImg: ahad,
-		btnText: "КОНСУЛЬТАЦИЮ",
-		innerItems: [
-			{
-				firstItem: "2.5000",
-				secondItem: "Murojatchilar Soni",
-			},
-			{
-				firstItem: "0.6$",
-				secondItem: "Murojatchilar Narxi",
-			},
-			{
-				firstItem: "3000$",
-				secondItem: "Reklama Budjeti",
-			},
-		],
-	},
-
-	{
-		id: 4,
-		title: "Anhor Park",
-		description: "Toshkentdagi eng katta istirohat bog‘laridan biri bo‘lib",
-		bgImg: anhor,
-		btnText: "КОНСУЛЬТАЦИЮ",
-		innerItems: [
-			{
-				firstItem: "1.5000",
-				secondItem: "Murojatchilar Soni",
-			},
-			{
-				firstItem: "0.8$",
-				secondItem: "Murojatchilar Narxi",
-			},
-			{
-				firstItem: "200$",
-				secondItem: "Reklama Budjeti",
-			},
-		],
-	},
-
-	{
-		id: 5,
-		title: "Telefon Oldi sotisi Iphone Samsung",
-		bgImg: apples,
-		btnText: "КОНСУЛЬТАЦИЮ",
-		innerItems: [
-			{
-				firstItem: "1.500",
-				secondItem: "Murojatchilar Soni",
-			},
-			{
-				firstItem: "0.17$",
-				secondItem: "Murojatchilar Narxi",
-			},
-			{
-				firstItem: "250$",
-				secondItem: "Reklama Budjeti",
-			},
-		],
-	},
-
-	{
-		id: 6,
-		title: "Max Power tabiiy tog’ asali",
-		bgImg: asal,
-		btnText: "КОНСУЛЬТАЦИЮ",
-		innerItems: [
-			{
-				firstItem: "600",
-				secondItem: "Murojatchilar Soni",
-			},
-			{
-				firstItem: "1$",
-				secondItem: "Murojatchilar Narxi",
-			},
-			{
-				firstItem: "100$",
-				secondItem: "Reklama Budjeti",
-			},
-		],
-	},
-
-	{
-		id: 7,
-		title: "Respublika dermatologiya va venerologiya markazi",
-		bgImg: av,
-		btnText: "КОНСУЛЬТАЦИЮ",
-		innerItems: [
-			{
-				firstItem: "500",
-				secondItem: "Murojatchilar Soni",
-			},
-			{
-				firstItem: "0.17$",
-				secondItem: "Murojatchilar Narxi",
-			},
-			{
-				firstItem: "300$",
-				secondItem: "Reklama Budjeti",
-			},
-		],
-	},
-
-	{
-		id: 8,
-		title: "Ayollar kiyimlari",
-		bgImg: imanem,
-		btnText: "КОНСУЛЬТАЦИЮ",
-		innerItems: [
-			{
-				firstItem: "494",
-				secondItem: "Murojatchilar Soni",
-			},
-			{
-				firstItem: "0.33$",
-				secondItem: "Murojatchilar Narxi",
-			},
-			{
-				firstItem: "200$",
-				secondItem: "Reklama Budjeti",
-			},
-		],
-	},
-
-	{
-		id: 9,
-		title: "Vintilatsa,konitsaner,ustanofka,xizmati",
-		bgImg: iqlimuz,
-		btnText: "КОНСУЛЬТАЦИЮ",
-		innerItems: [
-			{
-				firstItem: "300",
-				secondItem: "Murojatchilar Soni",
-			},
-			{
-				firstItem: "0.77$",
-				secondItem: "Murojatchilar Narxi",
-			},
-			{
-				firstItem: "600$",
-				secondItem: "Reklama Budjeti",
-			},
-		],
-	},
-
-	{
-		id: 10,
-		title: "KIPRIK UZAYTIRISH Xizmatlari",
-		bgImg: kiprik,
-		btnText: "КОНСУЛЬТАЦИЮ",
-		innerItems: [
-			{
-				firstItem: "89",
-				secondItem: "Murojatchilar Soni",
-			},
-			{
-				firstItem: "0.40$",
-				secondItem: "Murojatchilar Narxi",
-			},
-			{
-				firstItem: "200$",
-				secondItem: "Reklama Budjeti",
-			},
-		],
-	},
-
-	{
-		id: 11,
-		title: "Respublika dermatologiya va venerologiya markazi",
-		bgImg: ozdvkm,
-		btnText: "КОНСУЛЬТАЦИЮ",
-		innerItems: [
-			{
-				firstItem: "4.500",
-				secondItem: "Murojatchilar Soni",
-			},
-			{
-				firstItem: "0.35$",
-				secondItem: "Murojatchilar Narxi",
-			},
-			{
-				firstItem: "600$",
-				secondItem: "Reklama Budjeti",
-			},
-		],
-	},
-
-	{
-		id: 12,
-		title: "Zamonaviy  Aksessuarlar",
-		bgImg: phoneCase,
-		btnText: "КОНСУЛЬТАЦИЮ",
-		innerItems: [
-			{
-				firstItem: "3022",
-				secondItem: "Murojatchilar Soni",
-			},
-			{
-				firstItem: "0.10$",
-				secondItem: "Murojatchilar Narxi",
-			},
-			{
-				firstItem: "500$",
-				secondItem: "Reklama Budjeti",
-			},
-		],
-	},
-
-	{
-		id: 13,
-		title: "Stomatolog",
-		bgImg: stamatolg,
-		btnText: "КОНСУЛЬТАЦИЮ",
-		innerItems: [
-			{
-				firstItem: "100",
-				secondItem: "Murojatchilar Soni",
-			},
-			{
-				firstItem: "0.55$",
-				secondItem: "Murojatchilar Narxi",
-			},
-			{
-				firstItem: "400$",
-				secondItem: "Reklama Budjeti",
-			},
-		],
-	},
-
-	{
-		id: 14,
-		title: "Uybozor",
-		bgImg: uychi,
-		btnText: "КОНСУЛЬТАЦИЮ",
-		innerItems: [
-			{
-				firstItem: "1000",
-				secondItem: "Murojatchilar Soni",
-			},
-			{
-				firstItem: "0.33$",
-				secondItem: "Murojatchilar Narxi",
-			},
-			{
-				firstItem: "1500$",
-				secondItem: "Reklama Budjeti",
-			},
-		],
-	},
-];
+import { useTranslation } from "react-i18next";
 
 export default function PortfolioCards() {
 	const { numberOfCards } = useGlobalContext();
+	const { t } = useTranslation();
+
 	useEffect(() => {
 		AOS.init({});
 
@@ -331,6 +36,305 @@ export default function PortfolioCards() {
 			window.removeEventListener("resize", handleResize);
 		};
 	}, []);
+
+	// Card items
+	const cardItems = [
+		{
+			id: 1,
+			title: t("portf-card-1.title"),
+			description: t("portf-card-1.description"),
+			bgImg: itTimeAcademy,
+			btnText: t("portf-card-1.btnText"),
+			innerItems: [
+				{
+					firstItem: "626",
+					secondItem: t("portf-card-1.first.secondItem"),
+				},
+				{
+					firstItem: "0.32$",
+					secondItem: t("portf-card-1.second.secondItem"),
+				},
+				{
+					firstItem: "500$",
+					secondItem: t("portf-card-1.third.secondItem"),
+				},
+			],
+		},
+
+		{
+			id: 2,
+			title: t("portf-card-2.title"),
+			bgImg: casmetic,
+			btnText: t("portf-card-2.btnText"),
+			innerItems: [
+				{
+					firstItem: "899",
+					secondItem: t("portf-card-1.first.secondItem"),
+				},
+				{
+					firstItem: "0.12$",
+					secondItem: t("portf-card-1.second.secondItem"),
+				},
+				{
+					firstItem: "300$",
+					secondItem: t("portf-card-1.third.secondItem"),
+				},
+			],
+		},
+
+		{
+			id: 3,
+			title: t("portf-card-3.title"),
+			bgImg: ahad,
+			btnText: t("portf-card-3.btnText"),
+			innerItems: [
+				{
+					firstItem: "2.5000",
+					secondItem: t("portf-card-1.first.secondItem"),
+				},
+				{
+					firstItem: "0.6$",
+					secondItem: t("portf-card-1.second.secondItem"),
+				},
+				{
+					firstItem: "3000$",
+					secondItem: t("portf-card-1.third.secondItem"),
+				},
+			],
+		},
+
+		{
+			id: 4,
+			title: t("portf-card-4.title"),
+			description: t("portf-card-4.description"),
+			bgImg: anhor,
+			btnText: t("portf-card-4.btnText"),
+			innerItems: [
+				{
+					firstItem: "1.5000",
+					secondItem: t("portf-card-1.first.secondItem"),
+				},
+				{
+					firstItem: "0.8$",
+					secondItem: t("portf-card-1.second.secondItem"),
+				},
+				{
+					firstItem: "200$",
+					secondItem: t("portf-card-1.third.secondItem"),
+				},
+			],
+		},
+
+		{
+			id: 5,
+			title: t("portf-card-5.title"),
+			bgImg: apples,
+			btnText: t("portf-card-5.btnText"),
+			innerItems: [
+				{
+					firstItem: "1.500",
+					secondItem: t("portf-card-1.first.secondItem"),
+				},
+				{
+					firstItem: "0.17$",
+					secondItem: t("portf-card-1.second.secondItem"),
+				},
+				{
+					firstItem: "250$",
+					secondItem: t("portf-card-1.third.secondItem"),
+				},
+			],
+		},
+
+		{
+			id: 6,
+			title: t("portf-card-6.title"),
+			bgImg: asal,
+			btnText: t("portf-card-6.btnText"),
+			innerItems: [
+				{
+					firstItem: "600",
+					secondItem: t("portf-card-1.first.secondItem"),
+				},
+				{
+					firstItem: "1$",
+					secondItem: t("portf-card-1.second.secondItem"),
+				},
+				{
+					firstItem: "100$",
+					secondItem: t("portf-card-1.third.secondItem"),
+				},
+			],
+		},
+
+		{
+			id: 7,
+			title: t("portf-card-7.title"),
+			bgImg: av,
+			btnText: t("portf-card-7.btnText"),
+			innerItems: [
+				{
+					firstItem: "500",
+					secondItem: t("portf-card-1.first.secondItem"),
+				},
+				{
+					firstItem: "0.17$",
+					secondItem: t("portf-card-1.second.secondItem"),
+				},
+				{
+					firstItem: "300$",
+					secondItem: t("portf-card-1.third.secondItem"),
+				},
+			],
+		},
+
+		{
+			id: 8,
+			title: t("portf-card-8.title"),
+			bgImg: imanem,
+			btnText: t("portf-card-8.btnText"),
+			innerItems: [
+				{
+					firstItem: "494",
+					secondItem: t("portf-card-1.first.secondItem"),
+				},
+				{
+					firstItem: "0.33$",
+					secondItem: t("portf-card-1.second.secondItem"),
+				},
+				{
+					firstItem: "200$",
+					secondItem: t("portf-card-1.third.secondItem"),
+				},
+			],
+		},
+
+		{
+			id: 9,
+			title: t("portf-card-9.title"),
+			bgImg: iqlimuz,
+			btnText: t("portf-card-9.btnText"),
+			innerItems: [
+				{
+					firstItem: "300",
+					secondItem: t("portf-card-1.first.secondItem"),
+				},
+				{
+					firstItem: "0.77$",
+					secondItem: t("portf-card-1.second.secondItem"),
+				},
+				{
+					firstItem: "600$",
+					secondItem: t("portf-card-1.third.secondItem"),
+				},
+			],
+		},
+
+		{
+			id: 10,
+			title: t("portf-card-10.title"),
+			bgImg: kiprik,
+			btnText: t("portf-card-1.btnText"),
+			innerItems: [
+				{
+					firstItem: "89",
+					secondItem: t("portf-card-10.first.secondItem"),
+				},
+				{
+					firstItem: "0.40$",
+					secondItem: t("portf-card-1.second.secondItem"),
+				},
+				{
+					firstItem: "200$",
+					secondItem: t("portf-card-1.third.secondItem"),
+				},
+			],
+		},
+
+		{
+			id: 11,
+			title: t("portf-card-11.title"),
+			bgImg: ozdvkm,
+			btnText: t("portf-card-11.btnText"),
+			innerItems: [
+				{
+					firstItem: "4.500",
+					secondItem: t("portf-card-1.first.secondItem"),
+				},
+				{
+					firstItem: "0.35$",
+					secondItem: t("portf-card-1.second.secondItem"),
+				},
+				{
+					firstItem: "600$",
+					secondItem: t("portf-card-1.third.secondItem"),
+				},
+			],
+		},
+
+		{
+			id: 12,
+			title: t("portf-card-12.title"),
+			bgImg: phoneCase,
+			btnText: t("portf-card-12.btnText"),
+			innerItems: [
+				{
+					firstItem: "3022",
+					secondItem: t("portf-card-1.first.secondItem"),
+				},
+				{
+					firstItem: "0.10$",
+					secondItem: t("portf-card-1.second.secondItem"),
+				},
+				{
+					firstItem: "500$",
+					secondItem: t("portf-card-1.third.secondItem"),
+				},
+			],
+		},
+
+		{
+			id: 13,
+			title: t("portf-card-13.title"),
+			bgImg: stamatolg,
+			btnText: t("portf-card-13.btnText"),
+			innerItems: [
+				{
+					firstItem: "100",
+					secondItem: t("portf-card-1.first.secondItem"),
+				},
+				{
+					firstItem: "0.55$",
+					secondItem: t("portf-card-1.second.secondItem"),
+				},
+				{
+					firstItem: "400$",
+					secondItem: t("portf-card-1.third.secondItem"),
+				},
+			],
+		},
+
+		{
+			id: 14,
+			title: t("portf-card-14.title"),
+			bgImg: uychi,
+			btnText: t("portf-card-14.btnText"),
+			innerItems: [
+				{
+					firstItem: "1000",
+					secondItem: t("portf-card-1.first.secondItem"),
+				},
+				{
+					firstItem: "0.33$",
+					secondItem: t("portf-card-1.second.secondItem"),
+				},
+				{
+					firstItem: "1500$",
+					secondItem: t("portf-card-1.third.secondItem"),
+				},
+			],
+		},
+	];
 
 	return (
 		<div className="flex flex-col gap-y-10 xs:gap-y-[8rem] sm:gap-y-[6rem] lg:gap-y-[8.5rem] mt-9 sm:mt-[6rem]">

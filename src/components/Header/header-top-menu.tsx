@@ -4,10 +4,12 @@ import { useSwipeable } from "react-swipeable";
 import { IoClose } from "react-icons/io5";
 import { FaFacebookF } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
 
 export default function ResponsiveMenu() {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+	const { t } = useTranslation();
 
 	useEffect(() => {
 		// overflow-y-hidden when isMenuOpen true
@@ -77,13 +79,13 @@ export default function ResponsiveMenu() {
 						className="flex flex-col items-center justify-center gap-y-4 text-[24px] tracking-wider text-black/90"
 					>
 						<li>
-							<a href="#portfolio">КЕЙСЫ</a>
+							<a href="#portfolio">{t("keys")}</a>
 						</li>
 						<li>
-							<a href="#reviews">ОТЗЫВЫ</a>
+							<a href="#reviews">{t("opinion")}</a>
 						</li>
 						<li>
-							<a href="#contact">КОНТАКТЫ</a>
+							<a href="#contact">{t("contact")}</a>
 						</li>
 					</ul>
 
