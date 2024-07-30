@@ -4,8 +4,8 @@ export default function ProfileImage() {
 	return (
 		<img
 			alt="profile img"
-			className="lg:absolute -top-[8rem] right-0 mx-auto max-w-[320px] xs:max-w-[480px] sm:max-w-[550px] lg:w-[550px] object-cover w-[100%] 
-			h-[70vh] md:h-[100vh] lg:h-[110vh]"
+			className="lg:absolute -top-[8rem] right-0 mx-auto h-[70vh] max-w-[320px] object-cover w-[100%] xs:max-w-[480px] sm:max-w-[550px] md:h-[100vh]
+			 lg:w-[550px] lg:h-[110vh]"
 			src={profileImg}
 		/>
 	);

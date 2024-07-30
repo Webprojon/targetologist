@@ -8,7 +8,7 @@ export default function PortfolioHeading() {
 				<span className="border-b-2 border-blue-600">{t("portf-h1-span")}</span>{" "}
 				{t("portf-h1")}
 			</h1>
-			<p className="xs:text-[18px] sm:text-[20px] lg:text-[21px] sm:w-[34rem] lg:w-[37rem] mx-auto mt-2 xs:mt-5 lg:mt-6 lg:leading-8">
+			<p className="mx-auto mt-2 xs:mt-5 xs:text-[18px] sm:w-[34rem] sm:text-[20px] lg:text-[21px] lg:mt-6 lg:leading-8 lg:w-[37rem]">
 				{t("portf-p")}
 			</p>
 		</div>

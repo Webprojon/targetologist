@@ -51,18 +51,18 @@ export default function Recommendations() {
 		},
 	];
 	return (
-		<section className="lg:my-16 lg:w-[1150px] mx-auto">
-			<div className="flex flex-col lg:flex-row gap-y-12 lg:gap-x-10">
+		<section className="mx-auto lg:my-16 lg:w-[1150px]">
+			<div className="flex flex-col gap-y-12 lg:flex-row lg:gap-x-10">
 				{/* Left Side */}
 				<div className="flex flex-col gap-y-12 lg:gap-y-16">
-					<div className="text-center lg:text-left mx-auto lg:mx-0 max-w-[300px] xs:max-w-[470px] sm:max-w-[625px] lg:w-[450px] tracking-wider">
+					<div className="text-center mx-auto tracking-wider max-w-[300px] xs:max-w-[470px] sm:max-w-[625px] lg:mx-0 lg:w-[450px] lg:text-left">
 						<h1 className="font-bold text-[31px] leading-9 xs:text-[38px]">
 							{t("recommend-h1")}{" "}
 							<span className="border-b-2 border-blue-500">
 								{t("recommend-h1-span")}
 							</span>
 						</h1>
-						<p className="mt-6 lg:mt-4 font-medium text-black/75 text-[17px] xs:text-[19px]">
+						<p className="mt-6 font-medium text-black/75 text-[17px] xs:text-[19px] lg:mt-4">
 							{t("recommend-p")}
 						</p>
 					</div>
@@ -70,7 +70,7 @@ export default function Recommendations() {
 					{recommendationsData.slice(0, 2).map((recommendation, index) => (
 						<div
 							key={index}
-							className="flex flex-col justify-between xs:h-[52vh] mx-auto max-w-[300px] xs:max-w-[460px] sm:max-w-[555px] sm:w-[555px] lg:w-[554px] py-16 px-4 xs:p-10 lg:p-12
+							className="flex flex-col justify-between mx-auto max-w-[300px] py-16 px-4 xs:p-10  xs:h-[52vh] xs:max-w-[460px] sm:max-w-[555px] sm:w-[555px] lg:w-[554px] lg:p-12
 							 border-t-[5px] border-blue-500 shadow-[0_0_12px_3px_rgba(0,0,0,.4)]"
 						>
 							<div className="flex justify-between tracking-wide">
@@ -78,7 +78,7 @@ export default function Recommendations() {
 									<h2 className="font-bold text-[20px] lg:text-[22px]">
 										{recommendation.name}
 									</h2>
-									<p className="text-[15px] lg:text-md font-medium text-black/50 mt-3">
+									<p className="text-[15px] font-medium text-black/50 mt-3 lg:text-md">
 										{recommendation.description}
 									</p>
 								</div>
@@ -95,7 +95,7 @@ export default function Recommendations() {
 										<span className="font-bold text-[22px] xs:text-[32px]">
 											{stat.value}
 										</span>
-										<span className="font-medium text-[14px] xs:text-[17px] text-black/80">
+										<span className="font-medium text-[14px] text-black/80 xs:text-[17px]">
 											{stat.label.split(" ").map((word, i) => (
 												<span key={i}>
 													{word}
@@ -111,11 +111,11 @@ export default function Recommendations() {
 				</div>
 
 				{/* Right Side */}
-				<div className="lg:mt-[5.5rem] flex flex-col gap-y-12 lg:gap-y-16">
+				<div className="flex flex-col gap-y-12 lg:gap-y-16 lg:mt-[5.5rem]">
 					{recommendationsData.slice(2, 4).map((recommendation, index) => (
 						<div
 							key={index}
-							className="flex flex-col justify-between xs:h-[52vh] mx-auto max-w-[300px] xs:max-w-[460px] sm:max-w-[555px] sm:w-[555px] lg:w-[554px] py-16 px-4 xs:p-10 lg:p-12
+							className="flex flex-col justify-between mx-auto max-w-[300px] py-16 px-4 xs:p-10 xs:h-[52vh] xs:max-w-[460px] sm:max-w-[555px] sm:w-[555px] lg:w-[554px] lg:p-12
 							 border-t-[5px] border-blue-500 shadow-[0_0_12px_3px_rgba(0,0,0,.4)]"
 						>
 							<div className="flex justify-between tracking-wide">
@@ -123,7 +123,7 @@ export default function Recommendations() {
 									<h2 className="font-bold text-[20px] xs:text-[22px]">
 										{recommendation.name}
 									</h2>
-									<p className="text-[15px] xs:text-md font-medium text-black/50 mt-3">
+									<p className="text-[15px] font-medium text-black/50 mt-3 xs:text-md">
 										{recommendation.description}
 									</p>
 								</div>
@@ -140,7 +140,7 @@ export default function Recommendations() {
 										<span className="font-bold text-[22px] xs:text-[32px]">
 											{stat.value}
 										</span>
-										<span className="font-medium text-[14px] xs:text-[17px] text-black/80">
+										<span className="font-medium text-[14px] text-black/80 xs:text-[17px]">
 											{stat.label.split(" ").map((word, i) => (
 												<span key={i}>
 													{word}
@@ -155,13 +155,13 @@ export default function Recommendations() {
 					))}
 
 					<div
-						className="flex flex-col lg:flex-row justify-center items-center lg:items-end lg:gap-x-4 mx-auto lg:mx-0 max-w-[300px] xs:max-w-[460px]
+						className="flex flex-col lg:flex-row justify-center items-center mx-auto max-w-[300px] xs:max-w-[460px] lg:mx-0 lg:items-end lg:gap-x-4
 					 lg:max-w-[554px] lg:w-[554px]"
 					>
-						<h2 className="font-bold text-[24px] xs:text-[28px] leading-9 text-center">
+						<h2 className="font-bold text-[24px] leading-9 text-center xs:text-[28px]">
 							{t("recommend-h2")} <br /> {t("recommend-h2-span")}
 						</h2>
-						<button className="text-white font-bold tracking-wide rounded-[30px] mt-8 mb-14 lg:m-0 bg-blue-500 py-[1rem] lg:py-[1.2rem] text-[15px] px-7 hover:bg-blue-600 transition-all">
+						<button className="text-white font-bold tracking-wide rounded-[30px] mt-8 mb-14 bg-blue-500 py-[1rem] text-[15px] px-7 hover:bg-blue-600 transition-all lg:m-0 lg:py-[1.2rem]">
 							{t("recommend-btn")}
 						</button>
 					</div>

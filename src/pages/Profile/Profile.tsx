@@ -5,10 +5,10 @@ import ProfileImage from "./Profile-image";
 export default function Profile() {
 	const { t } = useTranslation();
 	return (
-		<section className="relative bg-black/95 mt-[5rem] md:mt-[9rem] mb-10 pt-10 lg:py-14 lg:max-w-[1540px] mx-auto">
-			<div className="lg:relative flex flex-col mx-auto md:flex-row lg:w-[1150px]">
-				<div className="text-center md:text-left px-4 text-white mx-auto md:mx-0 max-w-[320px] xs:max-w-[460px] sm:max-w-[625px] lg:w-[540px]">
-					<h2 className="font-bold text-[27px] xs:text-[32px] sm:text-[32px] md:text-[32px] lg:text-[36px] tracking-wider leading-8 lg:leading-[3rem]">
+		<section className="relative bg-black/95 mt-[5rem] mb-10 pt-10 mx-auto md:mt-[9rem] lg:py-14 lg:max-w-[1540px]">
+			<div className="flex flex-col-reverse mx-auto md:flex-row lg:relative lg:w-[1150px]">
+				<div className="text-center px-4 text-white mx-auto max-w-[320px] xs:max-w-[460px] sm:max-w-[625px] md:text-left md:mx-0 lg:w-[540px]">
+					<h2 className="font-bold text-[27px] mt-8 tracking-wider leading-8 xs:text-[32px] sm:text-[32px] md:mt-0 md:text-[32px] lg:text-[36px] lg:leading-[3rem]">
 						{t("profile-h2")}{" "}
 						<span className="border-b-[3px] border-blue-500">
 							{t("profile-h2-span")}

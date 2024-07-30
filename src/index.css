@@ -39,8 +39,9 @@ html::-webkit-scrollbar {
 }
 
 /* HOME */
-.bg-image {
-	background-image: url("https://vakulenko.online/images/tild3736-6662-4466-b932-623832663736__tild6639-3239-4632-b.jpeg");
+.home-bg-img {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0) 0),
+		url("https://vakulenko.online/images/tild3736-6662-4466-b932-623832663736__tild6639-3239-4632-b.jpeg");
 	background-position: center;
 	background-repeat: repeat;
 	background-size: cover;
@@ -77,10 +78,6 @@ html::-webkit-scrollbar {
 	border-radius: 0.1px;
 }
 
-/*.swiper-pagination-bullet-active {
-	background-color: rgb(40, 97, 242);
-}*/
-
 /* SERVICE */
 .service-shadow {
 	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -98,4 +95,11 @@ html::-webkit-scrollbar {
 		rgba(63, 208, 237, 1) 100%,
 		rgba(200, 10, 183, 1) 100%
 	);
+}
+
+/* FOOTER */
+.footer-bg-img {
+	background-image: url("https://vakulenko.online/images/tild3339-3935-4265-b533-336266363036__photo.png");
+	background-position: center;
+	background-size: cover;
 }

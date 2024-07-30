@@ -42,7 +42,6 @@ export default function PortfolioCards() {
 		{
 			id: 1,
 			title: t("portf-card-1.title"),
-			description: t("portf-card-1.description"),
 			bgImg: itTimeAcademy,
 			btnText: t("portf-card-1.btnText"),
 			innerItems: [
@@ -106,7 +105,6 @@ export default function PortfolioCards() {
 		{
 			id: 4,
 			title: t("portf-card-4.title"),
-			description: t("portf-card-4.description"),
 			bgImg: anhor,
 			btnText: t("portf-card-4.btnText"),
 			innerItems: [
@@ -337,10 +335,10 @@ export default function PortfolioCards() {
 	];
 
 	return (
-		<div className="flex flex-col gap-y-10 xs:gap-y-[8rem] sm:gap-y-[6rem] lg:gap-y-[8.5rem] mt-9 sm:mt-[6rem]">
+		<div className="flex flex-col gap-y-10 mt-9 xs:gap-y-[8rem] sm:mt-[6rem] sm:gap-y-[6rem] lg:gap-y-[8.5rem]">
 			{cardItems
 				.slice(0, numberOfCards)
-				.map(({ bgImg, title, description, innerItems, btnText }, index) => {
+				.map(({ bgImg, title, innerItems, btnText }, index) => {
 					const bgImage = typeof bgImg === "string" ? bgImg : bgImg;
 
 					return (
@@ -348,40 +346,36 @@ export default function PortfolioCards() {
 							data-aos="fade-up"
 							key={index}
 							style={{
-								backgroundImage: `linear-gradient(to ${
-									index % 2 === 0 ? "left" : "right"
-								}, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 120%), url(${bgImage})`,
+								backgroundImage: `linear-gradient(to
+								 ${
+										index % 2 === 0 ? "left" : "right"
+									}, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 120%), url(${bgImage})`,
 							}}
-							className={`flex flex-col bg-right md:w-[850px] lg:w-[1160px] lg:h-[60vh] shadow-[0_0_12px_3px_rgba(0,0,0,1)] lg:shadow-none 
+							className={`flex flex-col bg-right shadow-[0_0_12px_3px_rgba(0,0,0,1)] md:w-[850px] lg:w-[1160px] lg:h-[60vh] lg:shadow-none 
 									hover:shadow-[0_0_10px_5px_rgba(0,0,0,1)]
-								 transition-shadow duration-300 ${
-										index % 2 === 0 ? "md:self-start" : "md:self-end"
-									}`}
+								 transition-shadow duration-300
+								  ${index % 2 === 0 ? "md:self-start" : "md:self-end"}`}
 						>
 							<div
-								className={`md:w-[24rem] flex flex-col xs:items-center md:items-start my-[2.2rem] ml-6 md:mx-6 lg:mx-8 text-white ${
-									index % 2 === 0 ? "md:self-end" : "md:self-start"
-								}`}
+								className={`flex flex-col my-[2.2rem] ml-6 text-white xs:items-center md:w-[24rem] md:items-start md:mx-6 lg:mx-8
+									 ${index % 2 === 0 ? "md:self-end" : "md:self-start"}`}
 							>
 								<div>
 									<h2 className="font-semibold text-[25px] xs:text-center xs:text-[30px] md:text-left lg:text-[28px] lg:leading-8">
 										{title}
 									</h2>
-									<p className="pt-3 font-medium sm:text-[18px] lg:text-[18px] lg:leading-6">
-										{description}
-									</p>
 								</div>
 
-								<div className="flex flex-col xs:flex-row gap-y-8 xs:gap-x-7 sm:gap-x-10 md:gap-x-10 mt-12 xs:mt-14 lg:mt-16">
+								<div className="flex flex-col gap-y-8 mt-12 xs:mt-14 xs:gap-x-7 xs:flex-row sm:gap-x-10 md:gap-x-10 lg:mt-16">
 									{innerItems.map(({ firstItem, secondItem }, idx) => (
 										<div key={idx} className="flex flex-col">
-											<span className="text-[26px] xs:text-[28px] sm:text-[36px] md:text-[28px] lg:text-[34px] tracking-tight font-bold">
+											<span className="text-[26px] tracking-tight font-bold xs:text-[28px] sm:text-[36px] md:text-[28px] lg:text-[34px]">
 												{firstItem}
 											</span>
 											{secondItem.split(" ").map((first, i) => (
 												<span
 													key={i}
-													className="sm:text-[18px] md:text-[15px] lg:text-[17px] font-medium"
+													className="font-medium sm:text-[18px] md:text-[15px] lg:text-[17px]"
 												>
 													{first}
 													<br />

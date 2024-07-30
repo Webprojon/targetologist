@@ -11,7 +11,9 @@ export default function Header() {
 
 				<HeaderLists />
 
-				<HeaderLangs />
+				<div className="hidden md:block">
+					<HeaderLangs />
+				</div>
 
 				<ResponsiveMenu />
 			</nav>

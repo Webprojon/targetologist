@@ -69,9 +69,9 @@ export default function Reviews() {
 	return (
 		<section
 			id="reviews"
-			className="scroll-mt-14 md:scroll-mt-0 bg-black relative pt-10 md:py-12"
+			className="scroll-mt-14 bg-black relative pt-10 md:scroll-mt-0 md:py-12"
 		>
-			<h2 className="text-white font-bold text-[26px] md:text-[45px] text-center">
+			<h2 className="text-white font-bold text-[26px] text-center md:text-[45px]">
 				<span className="border-b-2 border-blue-600">
 					{t("review-h2-span")}
 				</span>{" "}
@@ -80,7 +80,7 @@ export default function Reviews() {
 
 			<button
 				onClick={handlePause}
-				className="hidden md:block absolute top-[10rem] right-10 z-10 text-blue-500"
+				className="hidden absolute top-[10rem] right-10 z-10 text-blue-500 md:block"
 			>
 				{isPaused ? (
 					<IoMdPlay className="size-6" />

@@ -10,9 +10,10 @@ export default function ResponsiveMenu() {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 	const { t } = useTranslation();
+	const [selectedLanguage, setSelectedLanguage] = useState("");
+	const { i18n } = useTranslation();
 
 	useEffect(() => {
-		// overflow-y-hidden when isMenuOpen true
 		if (isMenuOpen) {
 			document.body.classList.add("no-scroll");
 		} else {
@@ -42,6 +43,22 @@ export default function ResponsiveMenu() {
 
 	const handleMenuToggle = () => {
 		setIsMenuOpen(!isMenuOpen);
+	};
+
+	useEffect(() => {
+		const initialLanguage =
+			typeof window !== "undefined"
+				? localStorage.getItem("i18nextLng") || "uz"
+				: "uz";
+		setSelectedLanguage(initialLanguage);
+	}, []);
+
+	const handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
+		const target = event.currentTarget as HTMLSpanElement;
+		const value = target.innerText.toLowerCase();
+		setSelectedLanguage(value);
+		i18n.changeLanguage(value);
+		localStorage.setItem("i18nextLng", value);
 	};
 
 	return (
@@ -109,8 +126,23 @@ export default function ResponsiveMenu() {
 						</div>
 
 						<div className="font-medium flex gap-x-4 text-xl">
-							<span>UZ</span>
-							<span className="text-blue-600">RU</span>
+							<span
+								onClick={handleClick}
+								className={`${
+									selectedLanguage === "uz" ? "text-blue-600" : ""
+								}`}
+							>
+								UZ
+							</span>
+
+							<span
+								onClick={handleClick}
+								className={`
+									${selectedLanguage === "ru" ? "text-blue-600" : ""}
+								`}
+							>
+								RU
+							</span>
 						</div>
 					</div>
 				</div>

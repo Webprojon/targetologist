@@ -3,12 +3,14 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { useGlobalContext } from "../context/global-context";
 
 export default function GlobalForm() {
 	const [nameValue, setNameValue] = useState("");
 	const [phoneValue, setPhoneValue] = useState("");
 	const [loading, setLoading] = useState(false);
 	const { t } = useTranslation();
+	const { isModal, setIsModal, setUserName } = useGlobalContext();
 
 	const SendMessage = (event: React.FormEvent<HTMLFormElement>) => {
 		setLoading(true);
@@ -17,7 +19,7 @@ export default function GlobalForm() {
 		const chat_id = "5850460435";
 		//const chat_id = "-1002155393636"; // for telegram channal
 		const url = `https://api.telegram.org/bot${token}/sendMessage`;
-		const messageContent = `Mijozning Ismi:  ${nameValue} \nMizojning Tel No'meri: ${phoneValue}`;
+		const messageContent = `Mijozning Ismi:  ${nameValue} \nMizojning Tel No'meri: +${phoneValue}`;
 
 		axios({
 			url: url,
@@ -29,11 +31,14 @@ export default function GlobalForm() {
 		})
 			.then(() => {
 				setTimeout(() => {
-					//setIsModal(!isModal);
-					//setUserName(nameValue);
+					setIsModal(!isModal);
+					setUserName(nameValue);
+				}, 2000);
+
+				setTimeout(() => {
+					setNameValue("");
+					setPhoneValue("");
 				}, 1000);
-				setNameValue("");
-				setPhoneValue("");
 			})
 			.catch((error) => console.log(error))
 			.finally(() => {
@@ -44,7 +49,7 @@ export default function GlobalForm() {
 	return (
 		<form
 			onSubmit={SendMessage}
-			className="px-4 md:px-2 mt-4 w-full flex flex-col gap-y-5 xs:px-12"
+			className="px-4 mt-4 w-full flex flex-col gap-y-5 xs:px-12 md:px-2"
 		>
 			<input
 				type="text"
@@ -52,10 +57,10 @@ export default function GlobalForm() {
 				value={nameValue}
 				onChange={(e) => setNameValue(e.target.value)}
 				placeholder={t("home-form-input")}
-				className="rounded-[28px] bg-zinc-700 py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300"
+				className="rounded-[28px] bg-zinc-800 py-[1rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300 lg:py-[.9rem]"
 			/>
 
-			<div className="rounded-[28px] bg-zinc-700 py-[.6rem] px-5 font-bold outline-none text-gray-300 placeholder:text-gray-300">
+			<div className="rounded-[28px] bg-zinc-800 py-[.6rem] px-5 font-bold outline-none  placeholder:text-gray-300">
 				<PhoneInput
 					country="uz"
 					value={phoneValue}
@@ -64,6 +69,7 @@ export default function GlobalForm() {
 					inputStyle={{
 						borderRadius: "28px",
 						backgroundColor: "transparent",
+						color: "#ccc",
 						fontWeight: "bold",
 						border: "none",
 						outline: "none",
@@ -76,7 +82,7 @@ export default function GlobalForm() {
 				/>
 			</div>
 
-			<button className="text-white font-bold tracking-wide rounded-[28px] bg-blue-500 py-[1rem] lg:py-[.9rem] px-5 hover:bg-blue-600 transition-all">
+			<button className="text-white font-bold tracking-wide rounded-[28px] bg-blue-500 py-[1rem] px-5 hover:bg-blue-600 transition-all lg:py-[.9rem]">
 				{loading ? t("home-form-sending") : t("home-form-btn")}
 			</button>
 		</form>

@@ -16,6 +16,7 @@ export default function ProfileForm() {
 	const [loading, setLoading] = useState(false);
 	const { rangeValues, setRangeValues } = useGlobalContext();
 	const { t } = useTranslation();
+	const { isModal, setIsModal, setUserName } = useGlobalContext();
 
 	const SendMessage = (event: React.FormEvent<HTMLFormElement>) => {
 		setLoading(true);
@@ -37,14 +38,17 @@ export default function ProfileForm() {
 		})
 			.then(() => {
 				setTimeout(() => {
-					//setIsModal(!isModal);
-					//setUserName(nameValue);
+					setIsModal(!isModal);
+					setUserName(nameValue);
+				}, 2000);
+
+				setTimeout(() => {
+					setNameValue("");
+					setPhoneValue("");
+					setZoneOfAdvertise("");
+					setAverageBill("");
+					setRangeValues([120]);
 				}, 1000);
-				setNameValue("");
-				setPhoneValue("");
-				setZoneOfAdvertise("");
-				setAverageBill("");
-				setRangeValues([120]);
 			})
 			.catch((error) => console.log(error))
 			.finally(() => {
@@ -66,16 +70,18 @@ export default function ProfileForm() {
 				autoComplete="off"
 				className="py-3 px-5 rounded-[25px] text-black/60 placeholder:text-black/60 font-medium outline-none"
 			/>
-			<PhoneInput
-				type="tel"
-				required
-				international
-				defaultCountry="UZ"
-				value={phoneValue}
-				onChange={(value?: E164Number) => setPhoneValue(value || "")}
-				placeholder="(99) 999-99-99"
-				className="rounded-[28px] bg-white py-[1rem] lg:py-[.9rem] px-5 font-bold outline-none text-black/60 placeholder:text-black/60"
-			/>
+			<div className="rounded-[28px] bg-white py-[1rem] px-5 font-bold outline-none text-black/60 placeholder:text-black/60 lg:py-[.8rem]">
+				<PhoneInput
+					type="tel"
+					required
+					international
+					defaultCountry="UZ"
+					value={phoneValue}
+					onChange={(value?: E164Number) => setPhoneValue(value || "")}
+					placeholder="(99) 999-99-99"
+				/>
+			</div>
+
 			<input
 				type="text"
 				required
@@ -105,7 +111,7 @@ export default function ProfileForm() {
 				<span>500</span>
 			</div>
 
-			<button className="mb-10 lg:mt-2 text-white font-bold tracking-wider rounded-[28px] bg-blue-500 py-3 px-4 hover:bg-blue-600 transition-all">
+			<button className="mb-10 text-white font-bold tracking-wider rounded-[28px] bg-blue-500 py-3 px-4 hover:bg-blue-600 transition-all lg:mt-2">
 				{loading ? t("profile-form-btn-send") : t("profile-form-btn")}
 			</button>
 		</form>

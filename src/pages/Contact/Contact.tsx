@@ -1,40 +1,40 @@
+import { useTranslation } from "react-i18next";
 import GlobalForm from "../../components/Form";
 
 export default function Contact() {
+	const { t } = useTranslation();
 	return (
 		<section
 			id="contact"
-			className="scroll-mt-20 md:scroll-mt-0 bg-image lg:h-[89vh]"
+			className="scroll-mt-20 home-bg-img md:scroll-mt-0 lg:h-[89vh]"
 		>
-			<div className="mx-auto max-w-[390px] xs:max-w-[490px] pt-[2rem] sm:pt-[3rem] py-10 lg:pt-[6.6rem] md:max-w-[930px] lg:max-w-[1150px]">
-				<div className="md:flex gap-x-14">
-					<div className="md:w-[1050px] text-center md:text-left lg:text-left lg:mt-6">
-						<h1 className="md:mt-10 text-white text-[30px] leading-8 md:text-[50px] lg:text-[56px] md:leading-[4.4rem] font-bold tracking-wide md:block">
-							Готовы к{" "}
-							<span className="font-bold md:border-b-[3px] border-blue-500">
-								потоку
+			<div className="mx-auto max-w-[390px] pt-[2rem] py-10 xs:max-w-[490px] sm:pt-[3rem] md:max-w-[930px] lg:pt-[6.6rem] lg:max-w-[1150px]">
+				<div className="gap-x-14 md:flex">
+					<div className="text-center md:w-[1050px] md:text-left lg:text-left lg:mt-6">
+						<h1 className="text-white text-[30px] leading-8 font-bold tracking-wide md:mt-10 md:text-[50px] md:leading-[4.4rem] md:block lg:text-[54px]">
+							{t("contact-h2")}{" "}
+							<span className="font-bold border-blue-500 md:border-b-[3px]">
+								{t("contact-h2-span")}
 							</span>
 							<br />
-							клиентов?
+							{t("contact-h2-br")}
 						</h1>
 
-						<div className="m-5 md:hidden border-b-[3px] border-blue-500"></div>
+						<div className="m-5 border-b-[3px] border-blue-500 md:hidden"></div>
 
-						<p className="hidden md:block font-medium text-white mt-5 xs:text-lg md:text-[20px] md:leading-9 md:tracking-wide md:mt-10">
-							Увеличу продажи с помощью рекламы в интернете и предоставлю{" "}
-							<b>первые обращения клиентов уже через 48 часов</b>
+						<p className="hidden font-medium text-white mt-5 xs:text-lg md:block md:text-[20px] md:leading-9 md:tracking-wide md:mt-10">
+							{t("contact-p")} <b>{t("contact-p-bold")}</b>
 						</p>
 					</div>
 
 					<div className="relative-container lg:w-[750px]">
 						<div className="hidden border-ping md:block"></div>
-						<div className="flex flex-col gap-y-4 text-center md:gap-y-6 md:p-[2rem] lg:p-[3.5rem] md:bg-black/70 md:border-2 border-blue-600 w-full h-full">
-							<h2 className="hidden md:block text-white text-[22px] xs:text-[28px] lg:mt-0 lg:text-[25px] font-bold">
-								СТРАТЕГИЯ БЕСПЛАТНО
+						<div className="flex flex-col gap-y-4 text-center border-blue-600 w-full h-full md:bg-black/70 md:border-2 md:gap-y-6 md:p-[2rem] lg:p-[3.5rem]">
+							<h2 className="hidden text-white text-[22px] font-bold xs:text-[28px] md:block lg:mt-0 lg:text-[25px]">
+								{t("contact-form-h2")}
 							</h2>
-							<p className="text-white xs:text-lg">
-								<b>Напишу</b> стратегию по Таргетированной Рекламе для Вашей
-								компании <b>бесплатно</b> и презентую ее!
+							<p className="text-white font-medium xs:text-lg">
+								{t("contact-form-p")}
 							</p>
 
 							<GlobalForm />

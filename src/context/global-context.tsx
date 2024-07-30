@@ -5,6 +5,10 @@ export interface GlobalContextType {
 	setNumberOfCards: React.Dispatch<React.SetStateAction<number>>;
 	rangeValues: number[];
 	setRangeValues: React.Dispatch<React.SetStateAction<number[]>>;
+	isModal: boolean;
+	setIsModal: React.Dispatch<React.SetStateAction<boolean>>;
+	userName: string;
+	setUserName: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
@@ -18,10 +22,21 @@ export const GlobalContextProvider: React.FC<GlobalProviderProps> = ({
 }) => {
 	const [numberOfCards, setNumberOfCards] = useState<number>(7);
 	const [rangeValues, setRangeValues] = useState<number[]>([120]);
+	const [isModal, setIsModal] = useState(false);
+	const [userName, setUserName] = useState("");
 
 	return (
 		<GlobalContext.Provider
-			value={{ numberOfCards, setNumberOfCards, rangeValues, setRangeValues }}
+			value={{
+				numberOfCards,
+				setNumberOfCards,
+				rangeValues,
+				setRangeValues,
+				isModal,
+				setIsModal,
+				userName,
+				setUserName,
+			}}
 		>
 			{children}
 		</GlobalContext.Provider>

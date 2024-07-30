@@ -22,7 +22,7 @@ export default function HeaderLangs() {
 	};
 
 	return (
-		<div className="cursor-pointer font-bold text-white hidden md:block">
+		<div className="cursor-pointer font-bold text-white">
 			<span
 				onClick={handleClick}
 				className={`border border-blue-600 py-[.4rem] px-3
