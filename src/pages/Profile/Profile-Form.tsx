@@ -5,16 +5,22 @@ import { useGlobalContext } from "../../context/global-context";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useTranslation } from "react-i18next";
+import { AppDispatch, RootState } from "../../redux/store";
+import { useDispatch, useSelector } from "react-redux";
+import { setRangeValues } from "../../redux/global-slices";
 
 type E164Number = string;
 
 export default function ProfileForm() {
+	// Redux
+	const dispatch: AppDispatch = useDispatch();
+	const rangeValues = useSelector((state: RootState) => state.user.rangeValues);
+
 	const [nameValue, setNameValue] = useState("");
 	const [phoneValue, setPhoneValue] = useState("");
 	const [zoneOfAdvertise, setZoneOfAdvertise] = useState("");
 	const [averageBill, setAverageBill] = useState("");
 	const [loading, setLoading] = useState(false);
-	const { rangeValues, setRangeValues } = useGlobalContext();
 	const { t } = useTranslation();
 	const { isModal, setIsModal, setUserName } = useGlobalContext();
 
@@ -47,7 +53,7 @@ export default function ProfileForm() {
 					setPhoneValue("");
 					setZoneOfAdvertise("");
 					setAverageBill("");
-					setRangeValues([120]);
+					dispatch(setRangeValues([120]));
 				}, 1000);
 			})
 			.catch((error) => console.log(error))

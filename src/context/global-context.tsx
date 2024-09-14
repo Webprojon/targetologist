@@ -3,8 +3,6 @@ import React, { createContext, useState, ReactNode, useContext } from "react";
 export interface GlobalContextType {
 	numberOfCards: number;
 	setNumberOfCards: React.Dispatch<React.SetStateAction<number>>;
-	rangeValues: number[];
-	setRangeValues: React.Dispatch<React.SetStateAction<number[]>>;
 	isModal: boolean;
 	setIsModal: React.Dispatch<React.SetStateAction<boolean>>;
 	userName: string;
@@ -21,7 +19,6 @@ export const GlobalContextProvider: React.FC<GlobalProviderProps> = ({
 	children,
 }) => {
 	const [numberOfCards, setNumberOfCards] = useState<number>(7);
-	const [rangeValues, setRangeValues] = useState<number[]>([120]);
 	const [isModal, setIsModal] = useState(false);
 	const [userName, setUserName] = useState("");
 
@@ -30,8 +27,6 @@ export const GlobalContextProvider: React.FC<GlobalProviderProps> = ({
 			value={{
 				numberOfCards,
 				setNumberOfCards,
-				rangeValues,
-				setRangeValues,
 				isModal,
 				setIsModal,
 				userName,

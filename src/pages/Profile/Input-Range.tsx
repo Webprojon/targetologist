@@ -1,8 +1,11 @@
 import { Range } from "react-range";
-import { useGlobalContext } from "../../context/global-context";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../redux/store";
+import { setRangeValues } from "../../redux/global-slices";
 
 export default function InputRange() {
-	const { rangeValues, setRangeValues } = useGlobalContext();
+	const dispatch: AppDispatch = useDispatch();
+	const rangeValues = useSelector((state: RootState) => state.user.rangeValues);
 
 	return (
 		<div className="relative pt-9">
@@ -10,7 +13,7 @@ export default function InputRange() {
 				min={30}
 				max={500}
 				values={rangeValues}
-				onChange={(rangeValues) => setRangeValues(rangeValues)}
+				onChange={(rangeValues) => dispatch(setRangeValues(rangeValues))}
 				renderTrack={({ props, children }) => {
 					const { ...restProps } = props;
 					const percentage = ((rangeValues[0] - 30) / (500 - 30)) * 100;
